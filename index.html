@@ -1,384 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varshini Portfolio</title>
-  <style>
-    /* Dark theme base */
-    body, html, #root, .app {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #ffffff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Varshini Venkataraman | Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Varshini Venkataraman — Full-Stack Developer | MSCS @ UMass Amherst | React, Node.js, Spring Boot, AWS | Seeking Full-Time SWE Roles Starting Summer 2026."/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      background: rgba(20, 20, 20, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover {
-      color: #00d4ff;
-    }
-
-    /* Sections */
-    .section {
-      padding: 5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: #00d4ff;
-    }
-
-    /* Cards */
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .card {
-      background: #1e1e1e;
-      padding: 2rem;
-      border-radius: 16px;
-      margin: 1rem;
-      width: 100%;
-      max-width: 800px;
-      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 212, 255, 0.6);
-    }
-
-    .card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #00d4ff;
-    }
-
-    .card p, .card li, .card span {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #e0e0e0;
-    }
-
-    .card ul {
-      padding-left: 1.2rem;
-    }
-
-    .card a {
-      margin-top: 0.5rem;
-      color: #00d4ff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 6rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .highlight {
-      color: #00d4ff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 50px;
-      padding-bottom: 20px;
-    }
-
-    .buttons a {
-      padding: 1rem 2rem;
-      margin: 0.5rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-
-    .btn {
-      background: #00d4ff;
-      color: #121212;
-    }
-
-    .btn:hover {
-      background: #00b4cc;
-    }
-
-    .btn-outline {
-      border: 2px solid #00d4ff;
-      color: #00d4ff;
-    }
-
-    .btn-outline:hover {
-      background: #00d4ff;
-      color: #121212;
-    }
-
-    /* Gray alternate sections */
-    .gray {
-      background: #1a1a1a;
-    }
-
-    /* Social links */
-    .socials {
-    display: flex;
-    justify-content: center; /* centers buttons horizontally */
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 8px;
-    background: #0073e6;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s, background 0.3s;
-  }
-
-  .btn:hover {
-    background: #005bb5;
-    transform: scale(1.05);
-  }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      font-size: 1rem;
-      color: #aaa;
-    }
-
-    /* Gooey bubbles animation */
-    .gooey-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .bubble {
-      position: absolute;
-      background: #00d4ff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: float 12s infinite ease-in-out;
-      filter: blur(12px);
-    }
-
-    .bubble:nth-child(1) { left: 5%; animation-delay: 0s; }
-    .bubble:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .bubble:nth-child(3) { left: 40%; animation-delay: 4s; }
-    .bubble:nth-child(4) { left: 65%; animation-delay: 1s; }
-    .bubble:nth-child(5) { left: 85%; animation-delay: 3s; }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) scale(1); }
-      50% { transform: translateY(50vh) scale(1.2); }
-      100% { transform: translateY(-10vh) scale(1); }
-    }
-  </style>
+<style>
+:root{
+ --accent:#ffd700;
+ --accent-2:#ffcc00;
+ --bg:#0b0b0b;
+ --bg-2:#141414;
+ --card:#1a1a1a;
+ --text:#f5f5f5;
+ --muted:#cfcfcf;
+ --shadow:rgba(255,215,0,.25);
+}
+body.light{
+ --bg:#fefefe;
+ --bg-2:#fafafa;
+ --card:#ffffff;
+ --text:#111;
+ --muted:#333;
+ --shadow:rgba(0,0,0,.15);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;padding:0;
+ font-family:'Poppins',sans-serif;
+ background:var(--bg);color:var(--text);
+ scroll-behavior:smooth;transition:background .4s,color .4s;
+}
+nav{
+ position:fixed;top:0;width:100%;z-index:50;
+ background:rgba(10,10,10,.9);
+ backdrop-filter:blur(10px);
+ border-bottom:1px solid rgba(255,215,0,.2);
+ padding:.9rem;
+ display:flex;justify-content:center;align-items:center;
+ gap:1.2rem;transition:background .4s;
+}
+body.light nav{background:rgba(255,255,255,.85);border-color:rgba(0,0,0,.1)}
+nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0}
+nav a{color:var(--text);text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
+.toggle-btn{
+ cursor:pointer;border:none;background:var(--accent);
+ color:#111;border-radius:50%;width:36px;height:36px;
+ font-weight:700;transition:.3s;
+}
+.toggle-btn:hover{background:var(--accent-2);transform:scale(1.05)}
+.container{max-width:1100px;margin:0 auto;padding:0 1.2rem}
+.section{padding:6rem 0;text-align:center}
+.section h2{
+ color:var(--accent);font-size:2.2rem;margin:0 0 2.6rem;
+ position:relative;display:inline-block;
+}
+.section h2::after{
+ content:"";position:absolute;left:50%;
+ transform:translateX(-50%);bottom:-10px;width:80px;height:3px;background:var(--accent)
+}
+.hero{
+ padding-top:6.5rem;
+ background:radial-gradient(1200px 600px at 50% -10%,#111 0%,#000 60%);
+ border-bottom:1px solid rgba(255,215,0,.15);
+}
+body.light .hero{background:radial-gradient(circle at center,#fff 0%,#f8f8f8 100%)}
+.hero .wrap{display:grid;grid-template-columns:340px 1fr;gap:2rem;align-items:center}
+.headshot{
+ width:100%;aspect-ratio:1/1;border-radius:50%;
+ background:#111;
+ box-shadow:0 0 0 6px #111,0 0 40px var(--shadow);
+ overflow:hidden;
+}
+.headshot img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:2.6rem;margin:.2rem 0 .4rem}
+.hero .role{color:var(--muted);font-size:1.15rem}
+.hero .tag{margin-top:.6rem;color:var(--accent);font-weight:600;letter-spacing:.6px}
+.buttons{margin-top:1.4rem}
+.btn{
+ display:inline-block;padding:.9rem 1.4rem;border-radius:10px;
+ border:2px solid var(--accent);font-weight:600;text-decoration:none;
+ margin-right:.6rem;transition:.25s;
+}
+.btn.primary{background:var(--accent);color:#111}
+.btn.primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn.ghost{color:var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#111;transform:translateY(-2px)}
+.about p{max-width:900px;margin:0 auto;color:var(--muted);line-height:1.7;font-size:1.05rem}
+.cards{display:grid;gap:1.5rem}
+@media(min-width:860px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .cards .card.full{grid-column:span 2;justify-self:center;max-width:800px}
+}
+.card{
+ background:var(--card);border-radius:16px;padding:1.4rem;
+ box-shadow:0 6px 18px var(--shadow);
+ transition:.3s;text-align:left
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 26px var(--shadow)}
+.card h3{color:var(--accent);margin:.2rem 0 .6rem}
+.card p{color:var(--muted);margin:.3rem 0 .6rem}
+.meta{color:var(--muted);font-size:.95rem}
+.mock{background:#0f0f0f;border:1px solid #222;border-radius:12px;overflow:hidden;margin-bottom:.9rem}
+body.light .mock{background:#f4f4f4;border-color:#ddd}
+.mock svg{display:block;width:100%;height:auto}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;align-items:center;justify-items:center}
+.skill{
+ background:var(--card);border-radius:14px;padding:1rem .8rem;width:100%;
+ display:flex;gap:.6rem;align-items:center;justify-content:center;
+ box-shadow:0 4px 12px var(--shadow)
+}
+.skill i{font-size:26px}
+.skill span{font-weight:600}
+.socials{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.socials a{background:var(--accent);color:#111;padding:.8rem 1.1rem;border-radius:10px;font-weight:700;text-decoration:none}
+.socials a:hover{background:var(--accent-2)}
+footer{border-top:1px solid rgba(255,215,0,.2);padding:2rem 0;text-align:center;color:var(--muted)}
+[data-animate]{opacity:0;transform:translateY(24px);transition:all .7s ease}
+[data-animate].visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .hero .wrap{grid-template-columns:1fr;text-align:center}
+ .headshot{margin:0 auto}
+}
+</style>
 </head>
 <body>
-  <div class="app">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <ul>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#publication">Publication</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <h1>Hi, I’m Varshini 👋</h1>
-      <p>MSCS @ UMass Amherst | Full-Stack Developer</p>
-      <p class="highlight">Seeking Full-Time SWE Opportunities (May 2026)</p>
-      <div class="buttons">
-        <a href="https://drive.google.com/file/d/1wyMxvKNYSbFn29E-i9V1ri2Vxh7k2Y8q/view?usp=sharing" target="_blank" class="btn">View Resume</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#publication">Publication</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="toggle-btn" id="themeToggle">☀️</button>
+</nav>
+
+<header class="hero">
+<div class="container wrap" data-animate>
+<div class="headshot"><img src="assets/varshini.jpg" alt="Varshini Venkataraman photo"></div>
+<div>
+<h1>Hi, I’m Varshini 👋</h1>
+<div class="role">Full-Stack Developer · MSCS @ UMass Amherst</div>
+<div class="tag">Seeking Full-Time SWE Roles · Start Summer 2026</div>
+<div class="buttons">
+<a class="btn primary" href="https://drive.google.com/file/d/1nJGc-JMyRRQi0mKYhL1tM2lnEsK0W_b3/view?usp=sharing" target="_blank">View Resume</a>
+<a class="btn ghost" href="#contact">Let’s Connect</a>
+</div>
+</div>
+</div>
+</header>
+
+<section id="about" class="section about">
+<div class="container" data-animate>
+<h2>About Me</h2>
+<p>I’m a Full-Stack Developer and MSCS student at UMass Amherst who loves building scalable, user-centric software. I enjoy working across the stack with React, Node.js, and Spring Boot to create impactful, reliable applications. I’m driven by the mix of logic, creativity, and collaboration that great engineering requires. Outside of tech, I love cooking and gardening—they keep me curious and grounded. I’m currently seeking full-time Software Engineering opportunities starting Summer 2026.</p>
+</div>
+</section>
+
+<section id="experience" class="section" style="background:var(--bg-2);">
+<div class="container" data-animate>
+<h2>Experience</h2>
+<div class="cards">
+<article class="card"><h3>Software Development Intern · InLighn Tech </h3><p>Built and deployed full-stack apps with React, Node.js/Express, MongoDB; implemented secure JWT/session auth and CI/CD on AWS.</p><div class="meta">July 2025 – Oct 2025</div></article>
+<article class="card"><h3>Research Assistant · Anna University</h3><p>Co-authored IEEE work on weed detection using deep learning (VGG16, 95.7% accuracy). Presented findings to 300+ attendees.</p><div class="meta">Feb 2022 – Apr 2024</div></article>
+</div>
+</div>
+</section>
+
+<section id="skills" class="section">
+<div class="container" data-animate>
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+<div class="skill"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+<div class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+<div class="skill"><i class="devicon-c-plain colored"></i><span>C</span></div>
+<div class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+<div class="skill"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+<div class="skill"><i class="devicon-react-original colored"></i><span>React</span></div>
+<div class="skill"><i class="devicon-nextjs-original"></i><span>Next.js</span></div>
+<div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+<div class="skill"><i class="devicon-express-original"></i><span>Express</span></div>
+<div class="skill"><i class="devicon-spring-plain colored"></i><span>Spring Boot</span></div>
+<div class="skill"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+<div class="skill"><i class="devicon-flask-original"></i><span>Flask</span></div>
+<div class="skill"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+<div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+<div class="skill"><i class="devicon-amazonwebservices-original colored"></i><span>AWS</span></div>
+<div class="skill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+<div class="skill"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind CSS</span></div>
+<div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+<div class="skill"><i class="devicon-unity-original"></i><span>Unity</span></div>
+</div>
+</div>
+</section>
+
+<section id="projects" class="section" style="background:var(--bg-2);">
+<div class="container" data-animate>
+<h2>Projects</h2>
+<div class="cards">
+<article class="card"><div class="mock"><svg viewBox="0 0 800 420"><rect width="800" height="420" fill="#111"/><g fill="#ffd700"><rect x="290" y="330" width="30" height="40"/><rect x="350" y="280" width="30" height="90"/><rect x="410" y="240" width="30" height="130"/></g></svg></div><h3>Personal Finance Tracker</h3><p>Full-stack app for expense tracking and budgeting with auth and analytics.</p><div class="meta"><a href="https://github.com/varshiniv1/SmartSpender/tree/master" target="_blank" style="color:var(--accent)">GitHub Repo</a></div></article>
+<article class="card"><div class="mock"><svg viewBox="0 0 800 420"><rect width="800" height="420" fill="#111"/><polyline points="100,300 200,180 300,220 400,160 500,200 600,130 700,180" fill="none" stroke="#ffd700" stroke-width="4"/></svg></div><h3>COVID-19 Dashboard</h3><p>Interactive D3.js dashboard with charts and maps deployed on GitHub Pages.</p><div class="meta"><a href="https://hemangani.github.io/571-Project/" target="_blank" style="color:var(--accent)">Live Demo</a></div></article>
+<!-- IMDB centered (new visual) -->
+<article class="card full">
+  <div class="mock" aria-hidden="true">
+    <!-- IMDB: Storage → Index → Query Executor → Result -->
+    <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>IMDB Data Management & Query System Pipeline</title>
+      <!-- Canvas -->
+      <rect width="900" height="420" fill="#111"/>
+      <rect x="0" y="0" width="900" height="42" fill="#1a1a1a"/>
+
+      <!-- SECTION TITLES -->
+      <text x="120" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Storage</text>
+      <text x="390" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Index</text>
+      <text x="600" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Query Processing</text>
+      <text x="770" y="360" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Result</text>
+
+      <!-- DATABASE CYLINDER (Storage) -->
+      <g transform="translate(80,95)">
+        <ellipse cx="70" cy="0" rx="70" ry="16" fill="#202020"/>
+        <rect x="0" y="0" width="140" height="160" fill="#202020"/>
+        <ellipse cx="70" cy="160" rx="70" ry="16" fill="#202020"/>
+        <!-- shelves -->
+        <rect x="10" y="35" width="120" height="6" fill="#2a2a2a"/>
+        <rect x="10" y="70" width="120" height="6" fill="#2a2a2a"/>
+        <rect x="10" y="105" width="120" height="6" fill="#2a2a2a"/>
+      </g>
+
+      <!-- ARROW: Storage -> Index -->
+      <path d="M220,175 C270,175 310,175 350,175" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+      <!-- B+ TREE INDEX (stacked nodes) -->
+      <g transform="translate(350,120)">
+        <!-- parent -->
+        <rect x="55" y="0" width="110" height="34" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <rect x="75" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+        <rect x="105" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+        <rect x="135" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+        <!-- children row -->
+        <rect x="0" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <rect x="105" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <rect x="210" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <!-- leaves -->
+        <rect x="0" y="120" width="90" height="20" rx="4" fill="#232323"/>
+        <rect x="105" y="120" width="90" height="20" rx="4" fill="#232323"/>
+        <rect x="210" y="120" width="90" height="20" rx="4" fill="#232323"/>
+        <!-- connectors -->
+        <path d="M110,34 L45,70 M140,34 L150,70 M170,34 L255,70" stroke="#444" stroke-width="2"/>
+        <path d="M45,90 L100,90 M195,90 L205,90" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- ARROW: Index -> Processing -->
+      <path d="M520,175 C560,175 580,175 610,175" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+      <!-- PROCESSING GEARS (Query Executor) -->
+      <g transform="translate(620,120)">
+        <!-- gear 1 -->
+        <circle cx="40" cy="40" r="24" fill="#202020" stroke="#2a2a2a"/>
+        <g fill="#ffd700">
+          <rect x="38" y="14" width="4" height="10"/><rect x="38" y="56" width="4" height="10"/>
+          <rect x="14" y="38" width="10" height="4"/><rect x="56" y="38" width="10" height="4"/>
+          <rect x="22" y="22" width="8" height="4" transform="rotate(-45 26 24)"/>
+          <rect x="22" y="54" width="8" height="4" transform="rotate(45 26 56)"/>
+          <rect x="50" y="22" width="8" height="4" transform="rotate(45 54 24)"/>
+          <rect x="50" y="54" width="8" height="4" transform="rotate(-45 54 56)"/>
+        </g>
+        <circle cx="40" cy="40" r="8" fill="#ffd700"/>
+
+        <!-- gear 2 -->
+        <g transform="translate(80,20)">
+          <circle cx="40" cy="40" r="22" fill="#202020" stroke="#2a2a2a"/>
+          <g fill="#ffd700">
+            <rect x="38" y="12" width="4" height="10"/><rect x="38" y="58" width="4" height="10"/>
+            <rect x="12" y="38" width="10" height="4"/><rect x="58" y="38" width="10" height="4"/>
+          </g>
+          <circle cx="40" cy="40" r="7" fill="#ffd700"/>
+        </g>
+      </g>
+
+      <!-- QUERY INPUT BOX -->
+      <g transform="translate(610,250)">
+        <rect x="0" y="0" width="260" height="46" rx="8" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <text x="12" y="30" fill="#ffd700" font-size="14" font-family="Poppins, Arial">SELECT * FROM movies WHERE rating &gt; 8;</text>
+      </g>
+
+      <!-- ARROW: Processing -> Result -->
+      <path d="M740,210 C780,260 800,300 800,330" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+      <!-- RESULT TABLE -->
+      <g transform="translate(700,330)">
+        <rect x="0" y="0" width="180" height="70" rx="8" fill="#1e1e1e" stroke="#2a2a2a"/>
+        <rect x="0" y="22" width="180" height="1" fill="#2a2a2a"/>
+        <rect x="60" y="0" width="1" height="70" fill="#2a2a2a"/>
+        <rect x="120" y="0" width="1" height="70" fill="#2a2a2a"/>
+        <text x="8" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Title</text>
+        <text x="70" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Year</text>
+        <text x="130" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Rating</text>
+        <text x="8" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">Inception</text>
+        <text x="70" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">2010</text>
+        <text x="135" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">8.8</text>
+      </g>
+
+      <!-- Arrow marker -->
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <polygon points="0 0, 10 5, 0 10" fill="#ffd700"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <h3>IMDB Data Management &amp; Query System</h3>
+  <p>Implemented BufferManager, B+-tree index, and query executor; validated against PostgreSQL.</p>
+  <div class="meta">
+    <a href="https://github.com/sreehitha177/Disk-based-Database-Engine" target="_blank" rel="noopener" style="color:var(--accent)">GitHub Repo</a>
+  </div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- PUBLICATION SECTION -->
+<section id="publication" class="section" style="background:var(--bg-2);">
+  <div class="container" data-animate>
+    <h2>Publication</h2>
+    <div class="card" style="text-align:center;">
+      <h3>Weed Plant Detection in Agricultural Field Using Deep Learning Integrated with IoT</h3>
+      <p><strong>Conference:</strong> 2024 5th International Conference on Communication, Computing and Internet of Things (IC3IoT)</p>
+      <div class="mock" style="max-width:600px;margin:1rem auto;">
+        <img src="assets/publication-diagram.png" alt="Weed Detection System Flowchart" style="width:100%;border-radius:10px;">
       </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-      <h2>Education</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>University of Massachusetts Amherst, Amherst, MA</h3>
-          <p>MS in Computer Science, GPA: 3.73/4</p>
-          <span>Sept 2024 – May 2026</span>
-        </div>
-        <div class="card">
-          <h3>Anna University, Chennai, India</h3>
-          <p>B.E. in Computer Science and Engineering, First Class with Distinction, GPA: 3.47/4</p>
-          <span>May 2024</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section gray">
-      <h2>Experience</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Software Development Intern @ InLighn Tech (Remote)</h3>
-          <span>May 2024 – Aug 2024</span>
-          <ul>
-            <li>Built and deployed full-stack web apps using React.js, Node.js, Express, MongoDB.</li>
-            <li>Developed REST APIs and secure authentication (JWT, sessions, RBAC).</li>
-            <li>Applied Git/GitHub workflows and CI/CD pipelines for seamless AWS deployments.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Research Assistant @ Anna University, Chennai, India</h3>
-          <span>Feb 2022 – Apr 2024</span>
-          <ul>
-            <li>Authored/co-authored IEEE papers on weed plant detection and toxicity detection using deep learning.</li>
-            <li>Achieved 95.7% accuracy in weed plant detection using VGG16.</li>
-            <li>Presented findings at an international conference with 300+ attendees.</li>
-            <li>Collaborated on comparative studies of deep learning algorithms for agriculture.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <h2>Skills & Technologies</h2>
-      <div class="card">
-        <p><b>Languages:</b> Java, C, HTML, CSS, JavaScript, SQL, PHP, C#, Python, TypeScript</p>
-        <p><b>Frameworks:</b> React.js, Node.js, Express.js, Next.js, Django, Spring Boot, Flask, Tailwind CSS, Thymeleaf, Bootstrap, Unity</p>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section gray">
-      <h2>Projects</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Personal Finance Tracker Application</h3>
-          <p>Led a team of 4 to develop a full-stack app with login, dynamic expense tracking, and budget setting.</p>
-          <a href="https://github.com/your-repo-link" target="_blank">GitHub Repository</a>
-        </div>
-        <div class="card">
-          <h3>IMDB Data Management and Query System</h3>
-          <p>Implemented BufferManager, unclustered B+ tree index, and query executor; validated against PostgreSQL.</p>
-          <a href="https://github.com/your-repo-link" target="_blank">GitHub Repository</a>
-        </div>
-        <div class="card">
-          <h3>Interactive COVID-19 Dashboard</h3>
-          <p>Built a responsive dashboard with D3.js including time-series charts, maps, and filters; deployed via GitHub Pages.</p>
-          <a href="https://your-live-demo-link" target="_blank">Live Demo</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Publication Section -->
-    <section id="publication" class="section">
-      <h2>Publication</h2>
-      <div class="card">
-        <p>“Weed Plant Detection in Agricultural Field Using Deep Learning Integrated with IoT”, IEEE, 2024.</p>
-        <a href="https://ieeexplore.ieee.org/document/your-paper-link" target="_blank">Link</a>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section gray">
-  <h2>Get in Touch</h2>
-  <div class="card">
-    <div class="socials">
-      <a href="mailto:varshini.venkat1@gmail.com" class="btn">📧 Email</a>
-      <a href="https://linkedin.com/in/varshinivenkataraman" target="_blank" class="btn">💼 LinkedIn</a>
-      <a href="https://github.com/varshiniv1" target="_blank" class="btn">💻 GitHub</a>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10593389" target="_blank" rel="noopener" class="btn primary">📄 Read Paper on IEEE</a>
     </div>
   </div>
 </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>© <span id="year"></span> Varshini Venkataraman</p>
-    </footer>
+<section id="contact" class="section">
+<div class="container" data-animate>
+<h2>Get In Touch</h2>
+<p class="meta" style="max-width:760px;margin:0 auto 1rem">Open to Software Engineering internships and full-time opportunities. Let’s build something meaningful together.</p>
+<div class="socials">
+<a href="mailto:varshini.venkat1@gmail.com">📧 Email</a>
+<a href="https://linkedin.com/in/varshinivenkataraman" target="_blank">💼 LinkedIn</a>
+<a href="https://github.com/varshiniv1" target="_blank">💻 GitHub</a>
+</div>
+</div>
+</section>
 
-    <!-- Gooey bubbles -->
-    <div class="gooey-container">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-    </div>
-  </div>
+<footer>© <span id="year"></span> Varshini Venkataraman</footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+// fade-in
+const els=document.querySelectorAll('[data-animate]');
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+els.forEach(x=>io.observe(x));
+// theme toggle
+const toggle=document.getElementById('themeToggle');
+toggle.addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  toggle.textContent=document.body.classList.contains('light')?'🌙':'☀️';
+});
+
+// Optional: Detect system theme on load
+if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+  document.body.classList.add('light');
+  toggle.textContent='🌙';
+}
+</script>
+
 </body>
 </html>
