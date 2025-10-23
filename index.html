@@ -202,130 +202,158 @@ footer{border-top:1px solid rgba(255,215,0,.2);padding:2rem 0;text-align:center;
 </section>
 
 <section id="projects" class="section" style="background:var(--bg-2);">
-<div class="container" data-animate>
-<h2>Projects</h2>
-<div class="cards">
-<article class="card"><div class="mock"><svg viewBox="0 0 800 420"><rect width="800" height="420" fill="#111"/><g fill="#ffd700"><rect x="290" y="330" width="30" height="40"/><rect x="350" y="280" width="30" height="90"/><rect x="410" y="240" width="30" height="130"/></g></svg></div><h3>Personal Finance Tracker</h3><p>Full-stack app for expense tracking and budgeting with auth and analytics.</p><div class="meta"><a href="https://github.com/varshiniv1/SmartSpender/tree/master" target="_blank" style="color:var(--accent)">GitHub Repo</a></div></article>
-<article class="card"><div class="mock"><svg viewBox="0 0 800 420"><rect width="800" height="420" fill="#111"/><polyline points="100,300 200,180 300,220 400,160 500,200 600,130 700,180" fill="none" stroke="#ffd700" stroke-width="4"/></svg></div><h3>COVID-19 Dashboard</h3><p>Interactive D3.js dashboard with charts and maps deployed on GitHub Pages.</p><div class="meta"><a href="https://hemangani.github.io/571-Project/" target="_blank" style="color:var(--accent)">Live Demo</a></div></article>
-<!-- IMDB centered (new visual) -->
-<article class="card full">
-  <div class="mock" aria-hidden="true">
-    <!-- IMDB: Storage → Index → Query Executor → Result -->
-    <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img">
-      <title>IMDB Data Management & Query System Pipeline</title>
-      <!-- Canvas -->
-      <rect width="900" height="420" fill="#111"/>
-      <rect x="0" y="0" width="900" height="42" fill="#1a1a1a"/>
+  <div class="container" data-animate>
+    <h2>Projects</h2>
+    <div class="cards">
 
-      <!-- SECTION TITLES -->
-      <text x="120" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Storage</text>
-      <text x="390" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Index</text>
-      <text x="600" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Query Processing</text>
-      <text x="770" y="360" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Result</text>
+      <!-- Secure School Management System -->
+      <article class="card">
+        <div class="mock">
+          <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="420" fill="#111"/>
+            <!-- main frame -->
+            <rect x="100" y="80" width="600" height="260" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="2"/>
+            <!-- lock -->
+            <g transform="translate(160,160)">
+              <rect x="0" y="30" width="60" height="60" rx="8" fill="#ffd700"/>
+              <rect x="15" y="0" width="30" height="30" rx="15" fill="none" stroke="#ffd700" stroke-width="4"/>
+              <circle cx="30" cy="60" r="6" fill="#111"/>
+            </g>
+            <!-- network lines -->
+            <path d="M220,190 L320,150 L420,190 L520,150 L620,190" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- database -->
+            <g transform="translate(560,200)">
+              <ellipse cx="70" cy="0" rx="70" ry="14" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
+              <rect x="0" y="0" width="140" height="70" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
+              <ellipse cx="70" cy="70" rx="70" ry="14" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
+            </g>
+            <text x="130" y="320" fill="#ffd700" font-size="18" font-family="Poppins">🔐 Secure · Role-Based · Scalable</text>
+          </svg>
+        </div>
+        <h3>Secure School Management System</h3>
+        <p>
+          A secure full-stack Spring Boot web app managing student, teacher, and course data with 
+          Spring Security, CRUD operations, and modular REST APIs for scalable architecture.
+        </p>
+        <div class="meta">
+          <a href="https://github.com/varshiniv1/Secure-School-Management-System" target="_blank" style="color:var(--accent)">GitHub Repo</a>
+        </div>
+      </article>
 
-      <!-- DATABASE CYLINDER (Storage) -->
-      <g transform="translate(80,95)">
-        <ellipse cx="70" cy="0" rx="70" ry="16" fill="#202020"/>
-        <rect x="0" y="0" width="140" height="160" fill="#202020"/>
-        <ellipse cx="70" cy="160" rx="70" ry="16" fill="#202020"/>
-        <!-- shelves -->
-        <rect x="10" y="35" width="120" height="6" fill="#2a2a2a"/>
-        <rect x="10" y="70" width="120" height="6" fill="#2a2a2a"/>
-        <rect x="10" y="105" width="120" height="6" fill="#2a2a2a"/>
-      </g>
+      <!-- E-Commerce MERN -->
+      <article class="card">
+        <div class="mock">
+          <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="420" fill="#111"/>
+            <!-- storefront -->
+            <rect x="100" y="80" width="600" height="260" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="2"/>
+            <!-- product boxes -->
+            <rect x="140" y="120" width="100" height="100" rx="8" fill="#ffd700"/>
+            <rect x="280" y="120" width="100" height="100" rx="8" fill="#333" stroke="#ffd700" stroke-width="1.5"/>
+            <rect x="420" y="120" width="100" height="100" rx="8" fill="#333" stroke="#ffd700" stroke-width="1.5"/>
+            <!-- shopping cart -->
+            <g transform="translate(580,150)">
+              <circle cx="25" cy="40" r="8" fill="#ffd700"/>
+              <circle cx="55" cy="40" r="8" fill="#ffd700"/>
+              <rect x="10" y="10" width="50" height="25" rx="3" fill="none" stroke="#ffd700" stroke-width="3"/>
+              <line x1="10" y1="10" x2="5" y2="0" stroke="#ffd700" stroke-width="3"/>
+            </g>
+            <!-- checkout button -->
+            <rect x="300" y="250" width="200" height="36" rx="8" fill="#ffd700"/>
+            <text x="345" y="273" fill="#111" font-size="14" font-family="Poppins">Proceed to Checkout</text>
+          </svg>
+        </div>
+        <h3>E-Commerce MERN Application</h3>
+        <p>
+          A responsive full-stack e-commerce platform built with MongoDB, Express.js, React, and Node.js. 
+          Features product browsing, cart, checkout flow, and secure API endpoints.
+        </p>
+        <div class="meta">
+          <a href="https://github.com/varshiniv1/E-Commerce-MERN" target="_blank" style="color:var(--accent)">GitHub Repo</a>
+        </div>
+      </article>
 
-      <!-- ARROW: Storage -> Index -->
-      <path d="M220,175 C270,175 310,175 350,175" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+      <!-- Personal Finance Tracker -->
+      <article class="card">
+        <div class="mock">
+          <svg viewBox="0 0 800 420">
+            <rect width="800" height="420" fill="#111"/>
+            <g fill="#ffd700">
+              <rect x="290" y="330" width="30" height="40"/>
+              <rect x="350" y="280" width="30" height="90"/>
+              <rect x="410" y="240" width="30" height="130"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Personal Finance Tracker</h3>
+        <p>
+          Full-stack app for expense tracking and budgeting with authentication and interactive data visualizations.
+        </p>
+        <div class="meta">
+          <a href="https://github.com/varshiniv1/SmartSpender/tree/master" target="_blank" style="color:var(--accent)">GitHub Repo</a>
+        </div>
+      </article>
 
-      <!-- B+ TREE INDEX (stacked nodes) -->
-      <g transform="translate(350,120)">
-        <!-- parent -->
-        <rect x="55" y="0" width="110" height="34" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <rect x="75" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
-        <rect x="105" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
-        <rect x="135" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
-        <!-- children row -->
-        <rect x="0" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <rect x="105" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <rect x="210" y="70" width="90" height="28" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <!-- leaves -->
-        <rect x="0" y="120" width="90" height="20" rx="4" fill="#232323"/>
-        <rect x="105" y="120" width="90" height="20" rx="4" fill="#232323"/>
-        <rect x="210" y="120" width="90" height="20" rx="4" fill="#232323"/>
-        <!-- connectors -->
-        <path d="M110,34 L45,70 M140,34 L150,70 M170,34 L255,70" stroke="#444" stroke-width="2"/>
-        <path d="M45,90 L100,90 M195,90 L205,90" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
-      </g>
+      <!-- COVID Dashboard -->
+      <article class="card">
+        <div class="mock">
+          <svg viewBox="0 0 800 420">
+            <rect width="800" height="420" fill="#111"/>
+            <polyline points="100,300 200,180 300,220 400,160 500,200 600,130 700,180" fill="none" stroke="#ffd700" stroke-width="4"/>
+          </svg>
+        </div>
+        <h3>COVID-19 Dashboard</h3>
+        <p>
+          Interactive D3.js dashboard visualizing global and US county-level COVID-19 data with filters and animations.
+        </p>
+        <div class="meta">
+          <a href="https://hemangani.github.io/571-Project/" target="_blank" style="color:var(--accent)">Live Demo</a>
+        </div>
+      </article>
 
-      <!-- ARROW: Index -> Processing -->
-      <path d="M520,175 C560,175 580,175 610,175" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+      <!-- IMDB Project (centered) -->
+      <article class="card full">
+        <div class="mock" aria-hidden="true">
+          <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+            <rect width="900" height="420" fill="#111"/>
+            <rect x="0" y="0" width="900" height="42" fill="#1a1a1a"/>
+            <text x="120" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Storage</text>
+            <text x="390" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Index</text>
+            <text x="600" y="70" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Query Processing</text>
+            <text x="770" y="360" fill="#ffd700" font-size="14" font-family="Poppins, Arial">Result</text>
+            <g transform="translate(80,95)">
+              <ellipse cx="70" cy="0" rx="70" ry="16" fill="#202020"/>
+              <rect x="0" y="0" width="140" height="160" fill="#202020"/>
+              <ellipse cx="70" cy="160" rx="70" ry="16" fill="#202020"/>
+              <rect x="10" y="35" width="120" height="6" fill="#2a2a2a"/>
+              <rect x="10" y="70" width="120" height="6" fill="#2a2a2a"/>
+              <rect x="10" y="105" width="120" height="6" fill="#2a2a2a"/>
+            </g>
+            <path d="M220,175 C270,175 310,175 350,175" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+            <g transform="translate(350,120)">
+              <rect x="55" y="0" width="110" height="34" rx="6" fill="#1e1e1e" stroke="#2a2a2a"/>
+              <rect x="75" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+              <rect x="105" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+              <rect x="135" y="10" width="20" height="14" rx="3" fill="#ffd700"/>
+            </g>
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#ffd700"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+        <h3>IMDB Data Management & Query System</h3>
+        <p>Implemented BufferManager, B+-tree index, and query executor; validated against PostgreSQL.</p>
+        <div class="meta">
+          <a href="https://github.com/sreehitha177/Disk-based-Database-Engine" target="_blank" rel="noopener" style="color:var(--accent)">GitHub Repo</a>
+        </div>
+      </article>
 
-      <!-- PROCESSING GEARS (Query Executor) -->
-      <g transform="translate(620,120)">
-        <!-- gear 1 -->
-        <circle cx="40" cy="40" r="24" fill="#202020" stroke="#2a2a2a"/>
-        <g fill="#ffd700">
-          <rect x="38" y="14" width="4" height="10"/><rect x="38" y="56" width="4" height="10"/>
-          <rect x="14" y="38" width="10" height="4"/><rect x="56" y="38" width="10" height="4"/>
-          <rect x="22" y="22" width="8" height="4" transform="rotate(-45 26 24)"/>
-          <rect x="22" y="54" width="8" height="4" transform="rotate(45 26 56)"/>
-          <rect x="50" y="22" width="8" height="4" transform="rotate(45 54 24)"/>
-          <rect x="50" y="54" width="8" height="4" transform="rotate(-45 54 56)"/>
-        </g>
-        <circle cx="40" cy="40" r="8" fill="#ffd700"/>
-
-        <!-- gear 2 -->
-        <g transform="translate(80,20)">
-          <circle cx="40" cy="40" r="22" fill="#202020" stroke="#2a2a2a"/>
-          <g fill="#ffd700">
-            <rect x="38" y="12" width="4" height="10"/><rect x="38" y="58" width="4" height="10"/>
-            <rect x="12" y="38" width="10" height="4"/><rect x="58" y="38" width="10" height="4"/>
-          </g>
-          <circle cx="40" cy="40" r="7" fill="#ffd700"/>
-        </g>
-      </g>
-
-      <!-- QUERY INPUT BOX -->
-      <g transform="translate(610,250)">
-        <rect x="0" y="0" width="260" height="46" rx="8" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <text x="12" y="30" fill="#ffd700" font-size="14" font-family="Poppins, Arial">SELECT * FROM movies WHERE rating &gt; 8;</text>
-      </g>
-
-      <!-- ARROW: Processing -> Result -->
-      <path d="M740,210 C780,260 800,300 800,330" stroke="#ffd700" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
-
-      <!-- RESULT TABLE -->
-      <g transform="translate(700,330)">
-        <rect x="0" y="0" width="180" height="70" rx="8" fill="#1e1e1e" stroke="#2a2a2a"/>
-        <rect x="0" y="22" width="180" height="1" fill="#2a2a2a"/>
-        <rect x="60" y="0" width="1" height="70" fill="#2a2a2a"/>
-        <rect x="120" y="0" width="1" height="70" fill="#2a2a2a"/>
-        <text x="8" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Title</text>
-        <text x="70" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Year</text>
-        <text x="130" y="16" fill="#ffd700" font-size="12" font-family="Poppins, Arial">Rating</text>
-        <text x="8" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">Inception</text>
-        <text x="70" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">2010</text>
-        <text x="135" y="42" fill="#cfcfcf" font-size="12" font-family="Poppins, Arial">8.8</text>
-      </g>
-
-      <!-- Arrow marker -->
-      <defs>
-        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-          <polygon points="0 0, 10 5, 0 10" fill="#ffd700"/>
-        </marker>
-      </defs>
-    </svg>
+    </div>
   </div>
-
-  <h3>IMDB Data Management &amp; Query System</h3>
-  <p>Implemented BufferManager, B+-tree index, and query executor; validated against PostgreSQL.</p>
-  <div class="meta">
-    <a href="https://github.com/sreehitha177/Disk-based-Database-Engine" target="_blank" rel="noopener" style="color:var(--accent)">GitHub Repo</a>
-  </div>
-</article>
-</div>
-</div>
 </section>
+
 
 <!-- PUBLICATION SECTION -->
 <section id="publication" class="section" style="background:var(--bg-2);">
