@@ -5,679 +5,660 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Varshini Venkataraman | Full-Stack Developer</title>
 <meta name="description" content="Portfolio of Varshini Venkataraman — Full-Stack Developer | MSCS Graduate, UMass Amherst | Spring Boot, Kafka, React, AWS | Available for Full-Time SWE Roles."/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
- --accent:#ffd700;
- --accent-2:#ffcc00;
- --bg:#0b0b0b;
- --bg-2:#141414;
- --card:#1a1a1a;
- --text:#f5f5f5;
- --muted:#cfcfcf;
- --shadow:rgba(255,215,0,.25);
+  --accent:#0d9488;
+  --accent-2:#0f766e;
+  --accent-light:#ccfbf1;
+  --accent-mid:#5eead4;
+  --bg:#ffffff;
+  --bg-2:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --shadow:rgba(13,148,136,.10);
+  --shadow-hover:rgba(13,148,136,.20);
 }
-body.light{
- --bg:#fefefe;
- --bg-2:#fafafa;
- --card:#ffffff;
- --text:#111;
- --muted:#333;
- --shadow:rgba(0,0,0,.15);
-}
-*{box-sizing:border-box}
-html,body{
- margin:0;padding:0;
- font-family:'Poppins',sans-serif;
- background:var(--bg);color:var(--text);
- scroll-behavior:smooth;transition:background .4s,color .4s;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+/* NAV */
 nav{
- position:fixed;top:0;width:100%;z-index:50;
- background:rgba(10,10,10,.9);
- backdrop-filter:blur(10px);
- border-bottom:1px solid rgba(255,215,0,.2);
- padding:.9rem;
- display:flex;justify-content:center;align-items:center;
- gap:1.2rem;transition:background .4s;
+  position:fixed;top:0;width:100%;z-index:50;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:.85rem 1.4rem;
+  display:flex;justify-content:center;align-items:center;
 }
-body.light nav{background:rgba(255,255,255,.85);border-color:rgba(0,0,0,.1)}
-nav ul{list-style:none;display:flex;gap:1.2rem;margin:0;padding:0;flex-wrap:wrap;justify-content:center}
-nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:.95rem}
+nav ul{list-style:none;display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.88rem;transition:color .2s}
 nav a:hover{color:var(--accent)}
-.toggle-btn{
- cursor:pointer;border:none;background:var(--accent);
- color:#111;border-radius:50%;width:36px;height:36px;
- font-weight:700;transition:.3s;flex-shrink:0;
-}
-.toggle-btn:hover{background:var(--accent-2);transform:scale(1.05)}
-.container{max-width:1100px;margin:0 auto;padding:0 1.2rem}
-.section{padding:6rem 0;text-align:center}
+/* LAYOUT */
+.container{max-width:1080px;margin:0 auto;padding:0 1.4rem}
+.section{padding:5.5rem 0;text-align:center}
 .section h2{
- color:var(--accent);font-size:2.2rem;margin:0 0 2.6rem;
- position:relative;display:inline-block;
+  font-size:1.9rem;font-weight:800;color:var(--text);margin:0 0 2.8rem;
+  position:relative;display:inline-block;letter-spacing:-.4px;
 }
+.section h2 span{color:var(--accent)}
 .section h2::after{
- content:"";position:absolute;left:50%;
- transform:translateX(-50%);bottom:-10px;width:80px;height:3px;background:var(--accent)
+  content:"";position:absolute;left:0;bottom:-10px;
+  width:40px;height:3px;background:var(--accent);border-radius:2px;
 }
+/* HERO */
 .hero{
- padding-top:6.5rem;
- background:radial-gradient(1200px 600px at 50% -10%,#111 0%,#000 60%);
- border-bottom:1px solid rgba(255,215,0,.15);
+  padding-top:5.5rem;min-height:100vh;
+  display:flex;align-items:center;
+  background:linear-gradient(135deg,#f0fdfa 0%,#ffffff 55%,#f8fafc 100%);
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
 }
-body.light .hero{background:radial-gradient(circle at center,#fff 0%,#f8f8f8 100%)}
-.hero .wrap{display:grid;grid-template-columns:340px 1fr;gap:2rem;align-items:center}
+.hero::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,148,136,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-wrap{display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;padding:3rem 0}
 .headshot{
- width:100%;aspect-ratio:1/1;border-radius:50%;
- background:#111;
- box-shadow:0 0 0 6px #111,0 0 40px var(--shadow);
- overflow:hidden;
+  width:240px;height:240px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  box-shadow:0 0 0 4px var(--accent-light),0 0 0 7px var(--accent),0 20px 48px rgba(13,148,136,.18);
 }
 .headshot img{width:100%;height:100%;object-fit:cover}
-.hero h1{font-size:2.6rem;margin:.2rem 0 .4rem}
-.hero .role{color:var(--muted);font-size:1.15rem}
-.hero .tag{margin-top:.6rem;color:var(--accent);font-weight:600;letter-spacing:.6px}
-.buttons{margin-top:1.4rem}
-.btn{
- display:inline-block;padding:.9rem 1.4rem;border-radius:10px;
- border:2px solid var(--accent);font-weight:600;text-decoration:none;
- margin-right:.6rem;transition:.25s;
+.hero-text h1{font-size:2.7rem;font-weight:800;line-height:1.15;letter-spacing:-.6px;color:var(--text)}
+.hero-text h1 span{color:var(--accent)}
+.hero-text .role{color:var(--muted);font-size:1.05rem;font-weight:500;margin-top:.5rem}
+.avail-tag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  margin-top:.9rem;background:var(--accent-light);
+  color:var(--accent-2);font-weight:700;font-size:.85rem;
+  padding:.45rem 1rem;border-radius:20px;border:1px solid rgba(13,148,136,.25);
 }
-.btn.primary{background:var(--accent);color:#111}
-.btn.primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.pulse{
+  width:9px;height:9px;background:#10b981;border-radius:50%;flex-shrink:0;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.45)}
+  50%{box-shadow:0 0 0 7px rgba(16,185,129,0)}
+}
+.btns{margin-top:1.4rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.72rem 1.4rem;border-radius:8px;border:2px solid var(--accent);
+  font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;
+}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-2);border-color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow-hover)}
 .btn.ghost{color:var(--accent)}
-.btn.ghost:hover{background:var(--accent);color:#111;transform:translateY(-2px)}
-.about p{max-width:900px;margin:0 auto;color:var(--muted);line-height:1.7;font-size:1.05rem}
-.cards{display:grid;gap:1.5rem}
+.btn.ghost:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+/* ABOUT */
+.about-text{max-width:820px;margin:0 auto;color:var(--muted);line-height:1.85;font-size:1.05rem}
+/* CARDS */
+.cards{display:grid;gap:1.4rem}
 @media(min-width:860px){
- .cards{grid-template-columns:repeat(2,1fr)}
- .cards .card.full{grid-column:span 2;justify-self:center;max-width:800px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cards .card.full{grid-column:span 2;width:100%}
 }
 .card{
- background:var(--card);border-radius:16px;padding:1.4rem;
- box-shadow:0 6px 18px var(--shadow);
- transition:.3s;text-align:left
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;box-shadow:0 2px 12px var(--shadow);
+  transition:all .25s;text-align:left;
 }
-.card:hover{transform:translateY(-6px);box-shadow:0 10px 26px var(--shadow)}
-.card h3{color:var(--accent);margin:.2rem 0 .6rem}
-.card p{color:var(--muted);margin:.3rem 0 .6rem}
-.meta{color:var(--muted);font-size:.95rem}
-.mock{background:#0f0f0f;border:1px solid #222;border-radius:12px;overflow:hidden;margin-bottom:.9rem}
-body.light .mock{background:#f4f4f4;border-color:#ddd}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 32px var(--shadow-hover);border-color:var(--accent-mid)}
+.card h3{color:var(--accent);margin:.15rem 0 .45rem;font-size:1.05rem;font-weight:700}
+.card h4{color:var(--text);font-size:.97rem;font-weight:600;margin-bottom:.2rem}
+.card p{color:var(--muted);line-height:1.7;font-size:.94rem;margin:.3rem 0 .5rem}
+.card .meta{color:var(--muted);font-size:.87rem}
+/* Experience left accent */
+.exp-card{border-left:4px solid var(--accent)!important}
+/* MOCK */
+.mock{background:var(--bg-2);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.9rem}
 .mock svg{display:block;width:100%;height:auto}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;align-items:center;justify-items:center}
-.skill{
- background:var(--card);border-radius:14px;padding:1rem .8rem;width:100%;
- display:flex;gap:.6rem;align-items:center;justify-content:center;
- box-shadow:0 4px 12px var(--shadow)
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;text-align:left}
+.skill-cat-label{
+  font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--accent);margin:0 0 .7rem;
 }
-.skill i{font-size:26px}
-.skill span{font-weight:600}
-.socials{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
-.socials a{background:var(--accent);color:#111;padding:.8rem 1.1rem;border-radius:10px;font-weight:700;text-decoration:none}
-.socials a:hover{background:var(--accent-2)}
-footer{border-top:1px solid rgba(255,215,0,.2);padding:2rem 0;text-align:center;color:var(--muted)}
-[data-animate]{opacity:0;transform:translateY(24px);transition:all .7s ease}
-[data-animate].visible{opacity:1;transform:none}
-.card-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
-.card-links a{color:var(--accent);font-weight:600;text-decoration:none}
-.card-links a:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{
+  background:var(--accent-light);color:var(--accent-2);
+  padding:.28rem .8rem;border-radius:20px;font-size:.83rem;font-weight:600;
+  border:1px solid rgba(13,148,136,.2);
+}
+/* PROJECT LINKS */
+.plinks{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.6rem}
+.plinks a{color:var(--accent);font-weight:700;text-decoration:none;font-size:.88rem}
+.plinks a:hover{text-decoration:underline}
+/* BADGE */
 .badge{
- display:inline-block;background:var(--accent);color:#111;
- font-size:.72rem;font-weight:700;padding:.2rem .65rem;
- border-radius:20px;margin-bottom:.6rem;letter-spacing:.4px;
+  display:inline-block;background:var(--accent);color:#fff;
+  font-size:.7rem;font-weight:700;padding:.22rem .65rem;border-radius:20px;
+  margin-bottom:.55rem;letter-spacing:.4px;
 }
-.badge.outline{background:transparent;border:1.5px solid var(--accent);color:var(--accent)}
-@media(max-width:760px){
- .hero .wrap{grid-template-columns:1fr;text-align:center}
- .headshot{margin:0 auto}
+/* CONTACT */
+.socials{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.socials a{
+  background:var(--accent);color:#fff;padding:.78rem 1.3rem;
+  border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;
+}
+.socials a:hover{background:var(--accent-2);transform:translateY(-2px)}
+footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;color:var(--muted);font-size:.9rem}
+/* ANIMATE */
+[data-animate]{opacity:0;transform:translateY(22px);transition:all .65s ease}
+[data-animate].visible{opacity:1;transform:none}
+/* MOBILE */
+@media(max-width:720px){
+  .hero-wrap{grid-template-columns:1fr;text-align:center}
+  .headshot{margin:0 auto}
+  .btns,.avail-tag{justify-content:center}
+  .hero-text h1{font-size:2rem}
 }
 </style>
 </head>
 <body>
 
 <nav>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#publication">Publication</a></li>
-<li><a href="#writing">Writing</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button class="toggle-btn" id="themeToggle">☀️</button>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publication">Publication</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
-<div class="container wrap" data-animate>
-<div class="headshot"><img src="Varshini Snow.jpg" alt="Varshini Venkataraman photo"></div>
-<div>
-<h1>Hi, I'm Varshini 👋</h1>
-<div class="role">Full-Stack Developer · MSCS, UMass Amherst</div>
-<div class="tag">Available Now · Open to Full-Time SWE Roles</div>
-<div class="buttons">
-<a class="btn primary" href="https://drive.google.com/file/d/1gf5nsK1F2O_6Zb_YzUjT6hVheVX7Ymgu/view?usp=drive_link" target="_blank">View Resume</a>
-<a class="btn ghost" href="#contact">Let's Connect</a>
-</div>
-</div>
+<div class="container hero-wrap" data-animate>
+  <div class="headshot"><img src="Varshini Snow.jpg" alt="Varshini Venkataraman"></div>
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Varshini</span> 👋</h1>
+    <div class="role">Full-Stack Developer · MSCS, UMass Amherst</div>
+    <div class="avail-tag"><span class="pulse"></span>Available Now · Open to Full-Time SWE Roles</div>
+    <div class="btns">
+      <a class="btn primary" href="https://drive.google.com/file/d/1gf5nsK1F2O_6Zb_YzUjT6hVheVX7Ymgu/view?usp=drive_link" target="_blank">View Resume</a>
+      <a class="btn ghost" href="#contact">Let's Connect</a>
+    </div>
+  </div>
 </div>
 </header>
 
-<section id="about" class="section about">
+<!-- ABOUT -->
+<section id="about" class="section">
 <div class="container" data-animate>
-<h2>About Me</h2>
-<p>I'm a Full-Stack Developer and recent MSCS graduate from UMass Amherst with a track record of shipping production-grade software. I've built microservices platforms with Kafka and Spring Boot, AI-integrated applications deployed in the cloud, and real-time event systems — all in live codebases. Alongside that, I've contributed to LLM safety research at IBM Research and published an IEEE paper on deep learning. I write on Medium about technology and learning. I'm actively seeking full-time Software Engineering roles and available to start immediately.</p>
+  <h2>About <span>Me</span></h2>
+  <p class="about-text">I'm a Full-Stack Developer and recent MSCS graduate from UMass Amherst with a track record of shipping production-grade software. I've built microservices platforms with Kafka and Spring Boot, AI-integrated applications deployed in the cloud, and real-time event systems — all in live codebases. Alongside that, I've contributed to LLM safety research at IBM Research and published an IEEE paper on deep learning. I'm actively seeking full-time Software Engineering roles and available to start immediately.</p>
 </div>
 </section>
 
-<section id="education" class="section" style="background:var(--bg-2);">
+<!-- EDUCATION -->
+<section id="education" class="section" style="background:var(--bg-2)">
 <div class="container" data-animate>
-<h2>Education</h2>
-<div class="cards">
-  <article class="card">
-    <h3>M.S. Computer Science</h3>
-    <h4>University of Massachusetts Amherst</h4>
-    <div class="meta">2024 – 2026</div>
-    <p>Relevant coursework: Distributed Systems, Database Systems, Machine Learning, Advanced Algorithms, Information Visualization.</p>
-  </article>
-  <article class="card">
-    <h3>B.E. Computer Science &amp; Engineering</h3>
-    <h4>Anna University</h4>
-    <div class="meta">2020 – 2024</div>
-    <p>IEEE-published research on deep learning for agricultural IoT systems. Focus on computer vision and embedded ML.</p>
-  </article>
-</div>
+  <h2>Edu<span>cation</span></h2>
+  <div class="cards">
+    <article class="card">
+      <h3>M.S. Computer Science</h3>
+      <h4>University of Massachusetts Amherst</h4>
+      <div class="meta">2024 – 2026 &nbsp;·&nbsp; GPA: 3.81 / 4.0</div>
+      <p>Relevant coursework: Distributed Systems, Database Systems, Machine Learning, Advanced Algorithms, Information Visualization.</p>
+    </article>
+    <article class="card">
+      <h3>B.E. Computer Science &amp; Engineering</h3>
+      <h4>Anna University</h4>
+      <div class="meta">2020 – 2024</div>
+      <p>IEEE-published research on deep learning for agricultural IoT systems. Focus on computer vision and embedded ML.</p>
+    </article>
+  </div>
 </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience" class="section">
 <div class="container" data-animate>
-<h2>Experience</h2>
-<div class="cards">
+  <h2>Experi<span>ence</span></h2>
+  <div class="cards">
 
-  <article class="card">
-    <h3>Software Engineering Intern</h3>
-    <h4>Lillup</h4>
-    <div class="meta">Feb 2026 – Present · Remote, United States</div>
-    <p>
-      • Designing and implementing scalable full-stack features across the product using React and Spring Boot, with a focus on clean architecture and performance.<br>
-      • Collaborating with product and design teams to ship production-ready solutions aligned with business requirements.<br>
-      • Improved code quality and system reliability by applying modular design patterns and consistent documentation standards.
-    </p>
-  </article>
+    <article class="card exp-card">
+      <h3>Software Engineering Intern</h3>
+      <h4>Lillup</h4>
+      <div class="meta">Feb 2026 – Apr 2026 · Remote, United States</div>
+      <p>
+        • Designed and implemented scalable full-stack features using React and Spring Boot, with a focus on clean architecture and performance.<br>
+        • Collaborated with product and design teams to deliver production-ready solutions aligned with business requirements.<br>
+        • Improved code quality and system reliability through modular design patterns and consistent documentation standards.
+      </p>
+    </article>
 
-  <article class="card">
-    <h3>Extern — Industry Mentorship Program</h3>
-    <h4>IBM Research | UMass Amherst</h4>
-    <div class="meta">Jan 2026 – Present · Remote, United States</div>
-    <p>
-      • Building a domain-specific LLM-as-a-Judge framework for cybersecurity, targeting prompt injection, jailbreak attacks, vulnerable code detection, and threat intelligence evaluation.
-      <a href="https://github.com/varshiniv1/llm-as-judge" target="_blank" rel="noopener" style="color:var(--accent)">[GitHub]</a><br>
-      • Analyzing and mitigating systematic biases and failure modes in general-purpose LLM judges using security-focused benchmarks (Purple Llama, CyberSecEval).<br>
-      • Designing and benchmarking a security-aware LLM judge using prompt engineering, in-context learning, and controlled fine-tuning strategies.<br>
-      • Curating cybersecurity-specific datasets to stress-test LLM evaluation robustness through large-scale GPU experimentation.
-    </p>
-  </article>
+    <article class="card exp-card">
+      <h3>Extern — Industry Mentorship Program</h3>
+      <h4>IBM Research | UMass Amherst</h4>
+      <div class="meta">Jan 2026 – Present · Remote, United States</div>
+      <p>
+        • Building a domain-specific LLM-as-a-Judge framework for cybersecurity, targeting prompt injection, jailbreak attacks, vulnerable code detection, and threat intelligence evaluation.
+        <a href="https://github.com/varshiniv1/llm-as-judge" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">[GitHub]</a><br>
+        • Analyzing and mitigating systematic biases in LLM judges using security-focused benchmarks (Purple Llama, CyberSecEval).<br>
+        • Designing a security-aware LLM judge via prompt engineering, in-context learning, and controlled fine-tuning.<br>
+        • Curating cybersecurity datasets to stress-test evaluation robustness through large-scale GPU experimentation.
+      </p>
+    </article>
 
-  <article class="card">
-    <h3>Software Development Intern</h3>
-    <h4>InLighn Tech</h4>
-    <div class="meta">Jul 2025 – Oct 2025</div>
-    <p>Built and deployed full-stack applications with React, Node.js/Express, and MongoDB. Implemented secure JWT/session-based authentication and set up CI/CD pipelines on AWS.</p>
-  </article>
+    <article class="card exp-card">
+      <h3>Software Development Intern</h3>
+      <h4>InLighn Tech</h4>
+      <div class="meta">Jul 2025 – Oct 2025</div>
+      <p>Built and deployed full-stack applications with React, Node.js/Express, and MongoDB. Implemented secure JWT/session-based authentication and set up CI/CD pipelines on AWS.</p>
+    </article>
 
-  <article class="card">
-    <h3>Research Assistant</h3>
-    <h4>Anna University</h4>
-    <div class="meta">Feb 2022 – Apr 2024</div>
-    <p>Co-authored IEEE publication on weed detection using deep learning (VGG16, 95.7% accuracy). Presented research findings to 300+ attendees at IC3IoT 2024.</p>
-  </article>
+    <article class="card exp-card">
+      <h3>Research Assistant</h3>
+      <h4>Anna University</h4>
+      <div class="meta">Feb 2022 – Apr 2024</div>
+      <p>Co-authored IEEE publication on weed detection using deep learning (VGG16, 95.7% accuracy). Presented research findings to 300+ attendees at IC3IoT 2024.</p>
+    </article>
 
-</div>
-</div>
-</section>
-
-<section id="skills" class="section" style="background:var(--bg-2);">
-<div class="container" data-animate>
-<h2>Technical Skills</h2>
-<div class="skills-grid">
-<div class="skill"><i class="devicon-java-plain colored"></i><span>Java</span></div>
-<div class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-<div class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-<div class="skill"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-<div class="skill"><i class="devicon-react-original colored"></i><span>React</span></div>
-<div class="skill"><i class="devicon-nextjs-original"></i><span>Next.js</span></div>
-<div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
-<div class="skill"><i class="devicon-express-original"></i><span>Express</span></div>
-<div class="skill"><i class="devicon-spring-plain colored"></i><span>Spring Boot</span></div>
-<div class="skill"><i class="devicon-django-plain colored"></i><span>Django</span></div>
-<div class="skill"><i class="devicon-flask-original"></i><span>Flask</span></div>
-<div class="skill"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
-<div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-<div class="skill"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
-<div class="skill"><i class="devicon-amazonwebservices-original colored"></i><span>AWS</span></div>
-<div class="skill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-<div class="skill"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind CSS</span></div>
-<div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-</div>
-</div>
-</section>
-
-<section id="projects" class="section">
-  <div class="container" data-animate>
-    <h2>Projects</h2>
-    <div class="cards">
-
-      <!-- VaultFlow -->
-      <article class="card">
-        <div class="mock">
-          <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="400" fill="#111"/>
-            <text x="400" y="28" fill="#ffd700" font-size="13" font-family="Poppins" text-anchor="middle" font-weight="600">Microservices Architecture</text>
-            <!-- Next.js UI -->
-            <rect x="280" y="42" width="240" height="42" rx="8" fill="#1e1e1e" stroke="#ffd700" stroke-width="2"/>
-            <text x="400" y="68" fill="#ffd700" font-size="12" font-family="Poppins" text-anchor="middle">Next.js 14 Dashboard</text>
-            <!-- Gateway -->
-            <rect x="280" y="128" width="240" height="42" rx="8" fill="#2a2a2a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="400" y="154" fill="#ffd700" font-size="12" font-family="Poppins" text-anchor="middle">API Gateway · JWT · Rate-limit</text>
-            <!-- Arrow UI to Gateway -->
-            <line x1="400" y1="84" x2="400" y2="128" stroke="#ffd700" stroke-width="1.5"/>
-            <polygon points="394,124 400,132 406,124" fill="#ffd700"/>
-            <!-- Service boxes -->
-            <rect x="20" y="228" width="160" height="42" rx="8" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="100" y="254" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Accounts</text>
-            <rect x="200" y="228" width="160" height="42" rx="8" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="280" y="254" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Transactions</text>
-            <rect x="440" y="228" width="160" height="42" rx="8" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="520" y="254" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Fraud Detection</text>
-            <rect x="620" y="228" width="160" height="42" rx="8" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="700" y="254" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Notifications</text>
-            <!-- Lines from gateway to services -->
-            <line x1="345" y1="170" x2="100" y2="228" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
-            <line x1="365" y1="170" x2="280" y2="228" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
-            <line x1="435" y1="170" x2="520" y2="228" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
-            <line x1="455" y1="170" x2="700" y2="228" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
-            <!-- Kafka bus -->
-            <rect x="150" y="325" width="500" height="36" rx="8" fill="#2a2a2a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="400" y="348" fill="#ffd700" font-size="12" font-family="Poppins" text-anchor="middle" font-weight="600">Kafka Event Bus</text>
-            <line x1="280" y1="270" x2="280" y2="325" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
-            <line x1="520" y1="270" x2="520" y2="325" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
-            <line x1="700" y1="270" x2="610" y2="325" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
-            <!-- Badges -->
-            <rect x="20" y="370" width="170" height="24" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="105" y="386" fill="#ffd700" font-size="10" font-family="Poppins" text-anchor="middle">Resilience4j · Circuit Breaker</text>
-            <rect x="610" y="370" width="170" height="24" rx="12" fill="#ffd700"/>
-            <text x="695" y="386" fill="#111" font-size="10" font-family="Poppins" font-weight="700" text-anchor="middle">AI · Groq LLaMA-3.3-70b</text>
-          </svg>
-        </div>
-        <span class="badge">Live Demo</span>
-        <h3>VaultFlow — Banking Microservices Platform</h3>
-        <p>
-          Production-grade banking platform with a Spring Boot 4 microservices backend (API Gateway, Accounts, Transactions, Fraud Detection, Notifications) communicating over Kafka. Features JWT auth with refresh tokens, Resilience4j circuit breakers, AI-powered fraud explanation (Groq/LLaMA-3.3-70b), real-time notifications, and a Next.js 14 dashboard.
-        </p>
-        <div class="card-links">
-          <a href="https://vaultflow-ui.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
-          <a href="https://github.com/varshiniv1/VaultFlow" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-      <!-- CampusTix -->
-      <article class="card">
-        <div class="mock">
-          <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="400" fill="#111"/>
-            <!-- Header -->
-            <rect x="0" y="0" width="800" height="40" fill="#1a1a1a"/>
-            <text x="28" y="25" fill="#ffd700" font-size="14" font-family="Poppins" font-weight="700">CampusTix</text>
-            <rect x="640" y="8" width="110" height="24" rx="6" fill="#ffd700"/>
-            <text x="695" y="24" fill="#111" font-size="10" font-family="Poppins" font-weight="700" text-anchor="middle">Browse Events</text>
-            <!-- Event card 1 -->
-            <rect x="28" y="56" width="215" height="130" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-            <rect x="28" y="56" width="215" height="58" rx="10" fill="#2a2a2a"/>
-            <rect x="28" y="95" width="215" height="19" fill="#2a2a2a"/>
-            <text x="136" y="130" fill="#f5f5f5" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="600">Tech Conference 2026</text>
-            <text x="136" y="148" fill="#aaa" font-size="9" font-family="Poppins" text-anchor="middle">Jun 15 · 12 seats left</text>
-            <rect x="50" y="162" width="80" height="17" rx="8" fill="#ffd700"/>
-            <text x="90" y="174" fill="#111" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700">Book Now</text>
-            <!-- Event card 2 -->
-            <rect x="263" y="56" width="215" height="130" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-            <rect x="263" y="56" width="215" height="58" rx="10" fill="#2a2a2a"/>
-            <rect x="263" y="95" width="215" height="19" fill="#2a2a2a"/>
-            <text x="370" y="130" fill="#f5f5f5" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="600">Spring Hackathon</text>
-            <text x="370" y="148" fill="#e55" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="600">SOLD OUT · Join Waitlist</text>
-            <rect x="285" y="162" width="90" height="17" rx="8" fill="#333" stroke="#ffd700" stroke-width="1"/>
-            <text x="330" y="174" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">Join Waitlist</text>
-            <!-- QR Ticket panel -->
-            <rect x="530" y="48" width="240" height="330" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="2"/>
-            <text x="650" y="76" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="700">YOUR TICKET</text>
-            <line x1="530" y1="88" x2="770" y2="88" stroke="#333" stroke-width="1.5" stroke-dasharray="6,4"/>
-            <!-- QR code -->
-            <rect x="585" y="102" width="130" height="130" rx="4" fill="#0f0f0f" stroke="#333" stroke-width="1"/>
-            <rect x="593" y="110" width="28" height="28" rx="3" fill="none" stroke="#ffd700" stroke-width="3"/>
-            <rect x="599" y="116" width="16" height="16" fill="#ffd700"/>
-            <rect x="679" y="110" width="28" height="28" rx="3" fill="none" stroke="#ffd700" stroke-width="3"/>
-            <rect x="685" y="116" width="16" height="16" fill="#ffd700"/>
-            <rect x="593" y="196" width="28" height="28" rx="3" fill="none" stroke="#ffd700" stroke-width="3"/>
-            <rect x="599" y="202" width="16" height="16" fill="#ffd700"/>
-            <rect x="635" y="110" width="8" height="8" fill="#ffd700"/>
-            <rect x="649" y="110" width="8" height="8" fill="#ffd700"/>
-            <rect x="635" y="124" width="8" height="8" fill="#ffd700"/>
-            <rect x="649" y="124" width="16" height="8" fill="#ffd700"/>
-            <rect x="635" y="138" width="8" height="8" fill="#ffd700"/>
-            <rect x="635" y="152" width="16" height="8" fill="#ffd700"/>
-            <rect x="655" y="152" width="8" height="8" fill="#ffd700"/>
-            <rect x="635" y="166" width="8" height="8" fill="#ffd700"/>
-            <rect x="649" y="166" width="16" height="8" fill="#ffd700"/>
-            <text x="650" y="255" fill="#f5f5f5" font-size="10" font-family="Poppins" text-anchor="middle">#TKT-7823 · Seat B4</text>
-            <text x="650" y="270" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">Tech Conference 2026</text>
-            <line x1="530" y1="284" x2="770" y2="284" stroke="#333" stroke-width="1.5" stroke-dasharray="6,4"/>
-            <text x="650" y="306" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">Scan to verify · PDF download</text>
-            <!-- Feature tags -->
-            <rect x="28" y="206" width="120" height="20" rx="10" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="88" y="220" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">WebSocket seats</text>
-            <rect x="162" y="206" width="90" height="20" rx="10" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="207" y="220" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">AI Chatbot</text>
-            <rect x="28" y="234" width="95" height="20" rx="10" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="75" y="248" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">Email alerts</text>
-            <rect x="137" y="234" width="80" height="20" rx="10" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="177" y="248" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">Waitlist</text>
-            <rect x="28" y="262" width="90" height="20" rx="10" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="73" y="276" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">Redis cache</text>
-            <rect x="132" y="262" width="130" height="20" rx="10" fill="#ffd700"/>
-            <text x="197" y="276" fill="#111" font-size="9" font-family="Poppins" font-weight="700" text-anchor="middle">Deployed · Railway</text>
-          </svg>
-        </div>
-        <span class="badge">Live Demo</span>
-        <h3>CampusTix — Event Ticketing Platform</h3>
-        <p>
-          Full-stack event ticketing platform deployed on Railway. Features real-time seat booking via WebSocket with optimistic locking, an AI event chatbot (LLaMA 3.1 via Groq), QR code + PDF ticket generation, automated 24-hour email reminders, Redis rate limiting, and a waitlist system with email notifications on cancellation. Built with Spring Boot 4, PostgreSQL, Redis, and Thymeleaf.
-        </p>
-        <div class="card-links">
-          <a href="https://campustix-production.up.railway.app" target="_blank" rel="noopener">Live Demo →</a>
-          <a href="https://github.com/varshiniv1/CampusTix" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-      <!-- Secure School Management System -->
-      <article class="card">
-        <div class="mock">
-          <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="380" fill="#111"/>
-            <rect x="100" y="60" width="600" height="260" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="2"/>
-            <!-- Sidebar -->
-            <rect x="100" y="60" width="160" height="260" rx="12" fill="#151515" stroke="#ffd700" stroke-width="1"/>
-            <text x="180" y="115" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Students</text>
-            <text x="180" y="145" fill="#888" font-size="11" font-family="Poppins" text-anchor="middle">Teachers</text>
-            <text x="180" y="175" fill="#888" font-size="11" font-family="Poppins" text-anchor="middle">Courses</text>
-            <text x="180" y="205" fill="#888" font-size="11" font-family="Poppins" text-anchor="middle">Settings</text>
-            <!-- Lock icon -->
-            <g transform="translate(158,230)">
-              <rect x="0" y="18" width="40" height="36" rx="5" fill="#ffd700"/>
-              <rect x="10" y="0" width="20" height="22" rx="10" fill="none" stroke="#ffd700" stroke-width="3.5"/>
-              <circle cx="20" cy="34" r="5" fill="#111"/>
-            </g>
-            <!-- Main content -->
-            <rect x="280" y="90" width="380" height="30" rx="6" fill="#222"/>
-            <text x="470" y="110" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Student Management · CRUD</text>
-            <rect x="280" y="136" width="175" height="60" rx="6" fill="#222"/>
-            <text x="368" y="172" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Student Records</text>
-            <rect x="465" y="136" width="175" height="60" rx="6" fill="#222"/>
-            <text x="553" y="172" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Course Registry</text>
-            <!-- REST API labels -->
-            <text x="470" y="232" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">REST API · Spring Security · Role-Based Access</text>
-            <rect x="295" y="248" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#ffd700" stroke-width="1"/>
-            <text x="335" y="263" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">ADMIN</text>
-            <rect x="385" y="248" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#ffd700" stroke-width="1"/>
-            <text x="425" y="263" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">TEACHER</text>
-            <rect x="475" y="248" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#ffd700" stroke-width="1"/>
-            <text x="515" y="263" fill="#ffd700" font-size="9" font-family="Poppins" text-anchor="middle">STUDENT</text>
-          </svg>
-        </div>
-        <h3>Secure School Management System</h3>
-        <p>
-          Role-based school management platform built with Spring Boot and Spring Security. Implements full CRUD for students, teachers, and courses with modular REST APIs, JWT authentication, and layered access control (Admin / Teacher / Student roles).
-        </p>
-        <div class="card-links">
-          <a href="https://github.com/varshiniv1/Secure-School-Management-System" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-      <!-- E-Commerce MERN -->
-      <article class="card">
-        <div class="mock">
-          <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="380" fill="#111"/>
-            <rect x="0" y="0" width="800" height="44" fill="#1a1a1a"/>
-            <text x="50" y="28" fill="#ffd700" font-size="15" font-family="Poppins" font-weight="700">Waves</text>
-            <rect x="580" y="9" width="50" height="26" rx="6" fill="#ffd700"/>
-            <text x="605" y="27" fill="#111" font-size="10" font-family="Poppins" font-weight="700" text-anchor="middle">Cart (3)</text>
-            <!-- Product grid -->
-            <rect x="40" y="70" width="140" height="160" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-            <rect x="40" y="70" width="140" height="90" rx="10" fill="#ffd700" opacity=".85"/>
-            <text x="110" y="180" fill="#f5f5f5" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="600">Product A</text>
-            <text x="110" y="198" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">$29.99</text>
-            <rect x="55" y="208" width="110" height="18" rx="4" fill="#ffd700"/>
-            <text x="110" y="221" fill="#111" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700">Add to Cart</text>
-
-            <rect x="210" y="70" width="140" height="160" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-            <rect x="210" y="70" width="140" height="90" rx="10" fill="#333"/>
-            <text x="280" y="180" fill="#f5f5f5" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="600">Product B</text>
-            <text x="280" y="198" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">$49.99</text>
-            <rect x="225" y="208" width="110" height="18" rx="4" fill="#ffd700"/>
-            <text x="280" y="221" fill="#111" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700">Add to Cart</text>
-
-            <rect x="380" y="70" width="140" height="160" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-            <rect x="380" y="70" width="140" height="90" rx="10" fill="#333"/>
-            <text x="450" y="180" fill="#f5f5f5" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="600">Product C</text>
-            <text x="450" y="198" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">$19.99</text>
-            <rect x="395" y="208" width="110" height="18" rx="4" fill="#ffd700"/>
-            <text x="450" y="221" fill="#111" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700">Add to Cart</text>
-
-            <!-- Checkout panel -->
-            <rect x="570" y="60" width="200" height="240" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="670" y="90" fill="#ffd700" font-size="12" font-family="Poppins" text-anchor="middle" font-weight="700">Order Summary</text>
-            <line x1="580" y1="100" x2="760" y2="100" stroke="#333" stroke-width="1"/>
-            <text x="590" y="120" fill="#aaa" font-size="10" font-family="Poppins">Product A × 1</text>
-            <text x="750" y="120" fill="#f5f5f5" font-size="10" font-family="Poppins" text-anchor="end">$29.99</text>
-            <text x="590" y="140" fill="#aaa" font-size="10" font-family="Poppins">Product C × 2</text>
-            <text x="750" y="140" fill="#f5f5f5" font-size="10" font-family="Poppins" text-anchor="end">$39.98</text>
-            <line x1="580" y1="152" x2="760" y2="152" stroke="#333" stroke-width="1"/>
-            <text x="590" y="172" fill="#ffd700" font-size="11" font-family="Poppins" font-weight="700">Total</text>
-            <text x="750" y="172" fill="#ffd700" font-size="11" font-family="Poppins" font-weight="700" text-anchor="end">$69.97</text>
-            <rect x="585" y="245" width="170" height="38" rx="8" fill="#ffd700"/>
-            <text x="670" y="269" fill="#111" font-size="12" font-family="Poppins" font-weight="700" text-anchor="middle">Checkout</text>
-
-            <text x="110" y="310" fill="#888" font-size="10" font-family="Poppins" text-anchor="middle">MERN Stack · JWT Auth · REST API</text>
-          </svg>
-        </div>
-        <h3>E-Commerce MERN Application (Waves)</h3>
-        <p>
-          Responsive full-stack e-commerce platform built with MongoDB, Express.js, React, and Node.js. Supports product browsing with category filters, persistent shopping cart, secure checkout flow, and JWT-based user authentication with a clean mobile-responsive UI.
-        </p>
-        <div class="card-links">
-          <a href="https://github.com/varshiniv1/E-Commerce-MERN" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-      <!-- Personal Finance Tracker -->
-      <article class="card">
-        <div class="mock">
-          <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="380" fill="#111"/>
-            <!-- Balance card -->
-            <rect x="40" y="40" width="220" height="100" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="150" y="78" fill="#aaa" font-size="11" font-family="Poppins" text-anchor="middle">Total Balance</text>
-            <text x="150" y="112" fill="#ffd700" font-size="24" font-family="Poppins" font-weight="700" text-anchor="middle">$4,820</text>
-            <!-- Income / Expense cards -->
-            <rect x="280" y="40" width="140" height="100" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="350" y="78" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Income</text>
-            <text x="350" y="112" fill="#4caf50" font-size="18" font-family="Poppins" font-weight="700" text-anchor="middle">+$6,200</text>
-            <rect x="440" y="40" width="140" height="100" rx="12" fill="#1a1a1a" stroke="#ffd700" stroke-width="1"/>
-            <text x="510" y="78" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Expenses</text>
-            <text x="510" y="112" fill="#f44336" font-size="18" font-family="Poppins" font-weight="700" text-anchor="middle">-$1,380</text>
-            <!-- Bar chart -->
-            <text x="200" y="185" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Monthly Spending</text>
-            <rect x="80" y="280" width="30" height="60" rx="3" fill="#ffd700" opacity=".5"/>
-            <rect x="130" y="240" width="30" height="100" rx="3" fill="#ffd700" opacity=".7"/>
-            <rect x="180" y="210" width="30" height="130" rx="3" fill="#ffd700"/>
-            <rect x="230" y="250" width="30" height="90" rx="3" fill="#ffd700" opacity=".6"/>
-            <rect x="280" y="220" width="30" height="120" rx="3" fill="#ffd700" opacity=".8"/>
-            <text x="95" y="355" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">Jan</text>
-            <text x="145" y="355" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">Feb</text>
-            <text x="195" y="355" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">Mar</text>
-            <text x="245" y="355" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">Apr</text>
-            <text x="295" y="355" fill="#888" font-size="9" font-family="Poppins" text-anchor="middle">May</text>
-            <!-- Donut chart -->
-            <circle cx="580" cy="260" r="90" fill="none" stroke="#ffd700" stroke-width="30" stroke-dasharray="188 377" stroke-dashoffset="0"/>
-            <circle cx="580" cy="260" r="90" fill="none" stroke="#333" stroke-width="30" stroke-dasharray="126 377" stroke-dashoffset="-188"/>
-            <circle cx="580" cy="260" r="90" fill="none" stroke="#555" stroke-width="30" stroke-dasharray="63 377" stroke-dashoffset="-314"/>
-            <text x="580" y="255" fill="#ffd700" font-size="13" font-family="Poppins" text-anchor="middle" font-weight="700">Budget</text>
-            <text x="580" y="273" fill="#888" font-size="10" font-family="Poppins" text-anchor="middle">by category</text>
-          </svg>
-        </div>
-        <h3>SmartSpender — Personal Finance Tracker</h3>
-        <p>
-          Full-stack finance tracker with a React frontend and Node.js/Express backend. Features income and expense logging, category-based budget tracking, and interactive Chart.js visualizations (bar charts, donut charts). Includes JWT authentication and MongoDB persistence.
-        </p>
-        <div class="card-links">
-          <a href="https://github.com/varshiniv1/SmartSpender" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-      <!-- IMDB / DB Engine -->
-      <article class="card full">
-        <div class="mock" aria-hidden="true">
-          <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
-            <rect width="900" height="360" fill="#111"/>
-            <!-- Storage layer -->
-            <text x="120" y="40" fill="#ffd700" font-size="13" font-family="Poppins" text-anchor="middle" font-weight="600">Storage</text>
-            <g transform="translate(46,60)">
-              <ellipse cx="74" cy="0" rx="74" ry="16" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
-              <rect x="0" y="0" width="148" height="140" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
-              <ellipse cx="74" cy="140" rx="74" ry="16" fill="#202020" stroke="#ffd700" stroke-width="1.5"/>
-              <line x1="14" y1="46" x2="134" y2="46" stroke="#2a2a2a" stroke-width="5"/>
-              <line x1="14" y1="80" x2="134" y2="80" stroke="#2a2a2a" stroke-width="5"/>
-              <line x1="14" y1="114" x2="134" y2="114" stroke="#2a2a2a" stroke-width="5"/>
-              <text x="74" y="175" fill="#888" font-size="10" font-family="Poppins" text-anchor="middle">Buffer Manager</text>
-              <text x="74" y="192" fill="#888" font-size="10" font-family="Poppins" text-anchor="middle">LRU Eviction</text>
-            </g>
-            <!-- Arrow -->
-            <path d="M196,148 C240,148 260,148 290,148" stroke="#ffd700" stroke-width="3" fill="none"/>
-            <polygon points="286,142 296,148 286,154" fill="#ffd700"/>
-            <!-- B+ Tree index -->
-            <text x="430" y="40" fill="#ffd700" font-size="13" font-family="Poppins" text-anchor="middle" font-weight="600">B+-Tree Index</text>
-            <rect x="400" y="60" width="60" height="30" rx="5" fill="#1e1e1e" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="430" y="80" fill="#ffd700" font-size="10" font-family="Poppins" text-anchor="middle">Root</text>
-            <rect x="320" y="120" width="60" height="30" rx="5" fill="#1e1e1e" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="350" y="140" fill="#ffd700" font-size="10" font-family="Poppins" text-anchor="middle">Node</text>
-            <rect x="480" y="120" width="60" height="30" rx="5" fill="#1e1e1e" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="510" y="140" fill="#ffd700" font-size="10" font-family="Poppins" text-anchor="middle">Node</text>
-            <line x1="430" y1="90" x2="350" y2="120" stroke="#ffd700" stroke-width="1.5"/>
-            <line x1="430" y1="90" x2="510" y2="120" stroke="#ffd700" stroke-width="1.5"/>
-            <rect x="295" y="182" width="50" height="26" rx="4" fill="#151515" stroke="#333" stroke-width="1"/>
-            <rect x="352" y="182" width="50" height="26" rx="4" fill="#151515" stroke="#333" stroke-width="1"/>
-            <rect x="454" y="182" width="50" height="26" rx="4" fill="#151515" stroke="#333" stroke-width="1"/>
-            <rect x="511" y="182" width="50" height="26" rx="4" fill="#151515" stroke="#333" stroke-width="1"/>
-            <line x1="350" y1="150" x2="320" y2="182" stroke="#ffd700" stroke-width="1" opacity=".6"/>
-            <line x1="350" y1="150" x2="377" y2="182" stroke="#ffd700" stroke-width="1" opacity=".6"/>
-            <line x1="510" y1="150" x2="479" y2="182" stroke="#ffd700" stroke-width="1" opacity=".6"/>
-            <line x1="510" y1="150" x2="536" y2="182" stroke="#ffd700" stroke-width="1" opacity=".6"/>
-            <!-- Arrow to query -->
-            <path d="M568,148 C610,148 630,148 660,148" stroke="#ffd700" stroke-width="3" fill="none"/>
-            <polygon points="656,142 666,148 656,154" fill="#ffd700"/>
-            <!-- Query executor -->
-            <text x="760" y="40" fill="#ffd700" font-size="13" font-family="Poppins" text-anchor="middle" font-weight="600">Query Executor</text>
-            <rect x="680" y="60" width="160" height="80" rx="8" fill="#1e1e1e" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="760" y="96" fill="#aaa" font-size="10" font-family="Poppins" text-anchor="middle">Range Scan</text>
-            <text x="760" y="114" fill="#ffd700" font-size="10" font-family="Poppins" text-anchor="middle">titles A → Z</text>
-            <!-- PostgreSQL validation -->
-            <rect x="660" y="240" width="200" height="50" rx="8" fill="#1a1a1a" stroke="#ffd700" stroke-width="1.5"/>
-            <text x="760" y="265" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">Validated against</text>
-            <text x="760" y="283" fill="#ffd700" font-size="11" font-family="Poppins" text-anchor="middle">PostgreSQL</text>
-            <line x1="760" y1="140" x2="760" y2="240" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,3"/>
-            <!-- IMDB dataset label -->
-            <text x="120" y="310" fill="#888" font-size="11" font-family="Poppins" text-anchor="middle">IMDB Dataset · Millions of records</text>
-          </svg>
-        </div>
-        <h3>IMDB Data Management &amp; Query System</h3>
-        <p>Custom disk-based database engine implemented in Java over the IMDB dataset. Built a Buffer Manager with LRU page eviction, a B+-Tree index supporting efficient range scans, and a query executor processing millions of records. Query correctness validated against PostgreSQL — demonstrating deep understanding of database internals.</p>
-        <div class="card-links">
-          <a href="https://github.com/varshiniv1/Disk-based-Database-Engine" target="_blank" rel="noopener">GitHub Repo</a>
-        </div>
-      </article>
-
-    </div>
   </div>
+</div>
 </section>
 
-
-<!-- PUBLICATION SECTION -->
-<section id="publication" class="section" style="background:var(--bg-2);">
-  <div class="container" data-animate>
-    <h2>Publication</h2>
-    <div class="card" style="text-align:center;">
-      <h3>Weed Plant Detection in Agricultural Field Using Deep Learning Integrated with IoT</h3>
-      <p><strong>Conference:</strong> 2024 5th International Conference on Communication, Computing and Internet of Things (IC3IoT)</p>
-      <div class="mock" style="max-width:600px;margin:1rem auto;">
-        <img src="paper img.png" alt="Weed Detection System Flowchart" style="width:100%;border-radius:10px;">
+<!-- SKILLS -->
+<section id="skills" class="section" style="background:var(--bg-2)">
+<div class="container" data-animate>
+  <h2>Tech<span>nical Skills</span></h2>
+  <div class="skill-grid">
+    <div>
+      <div class="skill-cat-label">Languages</div>
+      <div class="chips">
+        <span class="chip">Java</span><span class="chip">Python</span>
+        <span class="chip">JavaScript</span><span class="chip">TypeScript</span>
       </div>
-      <a href="https://ieeexplore.ieee.org/abstract/document/10593389" target="_blank" rel="noopener" class="btn primary">📄 Read Paper on IEEE</a>
+    </div>
+    <div>
+      <div class="skill-cat-label">Frontend</div>
+      <div class="chips">
+        <span class="chip">React</span><span class="chip">Next.js</span>
+        <span class="chip">Tailwind CSS</span><span class="chip">Thymeleaf</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-cat-label">Backend</div>
+      <div class="chips">
+        <span class="chip">Spring Boot</span><span class="chip">Node.js</span>
+        <span class="chip">Express</span><span class="chip">Django</span><span class="chip">Flask</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-cat-label">Databases &amp; Cloud</div>
+      <div class="chips">
+        <span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
+        <span class="chip">Redis</span><span class="chip">AWS</span>
+        <span class="chip">Docker</span><span class="chip">Git</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-cat-label">AI &amp; ML</div>
+      <div class="chips">
+        <span class="chip">LLM Evaluation</span><span class="chip">Prompt Engineering</span>
+        <span class="chip">Groq API</span><span class="chip">Deep Learning</span>
+      </div>
     </div>
   </div>
+</div>
 </section>
 
-<!-- WRITING SECTION -->
-<section id="writing" class="section">
-  <div class="container" data-animate>
-    <h2>Writing</h2>
-    <div class="card" style="max-width:740px;margin:0 auto;text-align:left;">
-      <div class="meta" style="margin-bottom:.5rem">May 2026 · Medium</div>
-      <h3 style="margin:.2rem 0 .7rem">I tried replacing Google with AI for a week — here's what broke</h3>
-      <p>And what it made me realize about how I actually learn. A reflection on AI-assisted research, productive struggle, and why getting an answer fast isn't the same as understanding it.</p>
-      <a href="https://medium.com/@varshini.venkat1/i-tried-replacing-google-with-ai-for-a-week-heres-what-broke-12a758fcf7cc" target="_blank" rel="noopener" class="btn ghost" style="margin-top:.8rem;display:inline-block">Read on Medium →</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section" style="background:var(--bg-2);">
+<!-- PROJECTS -->
+<section id="projects" class="section">
 <div class="container" data-animate>
-<h2>Get In Touch</h2>
-<p class="meta" style="max-width:760px;margin:0 auto 1.4rem">Open to full-time Software Engineering roles. Let's build something meaningful together.</p>
-<div class="socials">
-<a href="mailto:varshini.venkat1@gmail.com">📧 Email</a>
-<a href="https://linkedin.com/in/varshinivenkataraman" target="_blank" rel="noopener">💼 LinkedIn</a>
-<a href="https://github.com/varshiniv1" target="_blank" rel="noopener">💻 GitHub</a>
-<a href="https://medium.com/@varshini.venkat1" target="_blank" rel="noopener">✍️ Medium</a>
-</div>
+  <h2>Pro<span>jects</span></h2>
+  <div class="cards">
+
+    <!-- VaultFlow -->
+    <article class="card">
+      <div class="mock">
+        <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="390" fill="#f8fafc"/>
+          <text x="400" y="26" fill="#0d9488" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Microservices Architecture</text>
+          <rect x="285" y="38" width="230" height="40" rx="8" fill="#fff" stroke="#0d9488" stroke-width="2"/>
+          <text x="400" y="63" fill="#0d9488" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">Next.js 14 Dashboard</text>
+          <line x1="400" y1="78" x2="400" y2="118" stroke="#0d9488" stroke-width="1.5"/>
+          <polygon points="394,115 400,123 406,115" fill="#0d9488"/>
+          <rect x="285" y="120" width="230" height="40" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="400" y="145" fill="#0f766e" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">API Gateway · JWT · Rate-limit</text>
+          <line x1="350" y1="160" x2="100" y2="215" stroke="#0d9488" stroke-width="1" opacity=".45"/>
+          <line x1="370" y1="160" x2="280" y2="215" stroke="#0d9488" stroke-width="1" opacity=".45"/>
+          <line x1="430" y1="160" x2="520" y2="215" stroke="#0d9488" stroke-width="1" opacity=".45"/>
+          <line x1="450" y1="160" x2="700" y2="215" stroke="#0d9488" stroke-width="1" opacity=".45"/>
+          <rect x="20" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+          <text x="100" y="240" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle">Accounts</text>
+          <rect x="200" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+          <text x="280" y="240" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle">Transactions</text>
+          <rect x="440" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+          <text x="520" y="240" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle">Fraud Detection</text>
+          <rect x="620" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+          <text x="700" y="240" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle">Notifications</text>
+          <rect x="155" y="310" width="490" height="36" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="400" y="333" fill="#0f766e" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Kafka Event Bus</text>
+          <line x1="280" y1="255" x2="280" y2="310" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <line x1="520" y1="255" x2="520" y2="310" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <line x1="700" y1="255" x2="610" y2="310" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <rect x="20" y="358" width="170" height="24" rx="12" fill="#0d9488"/>
+          <text x="105" y="374" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">AI · Groq LLaMA-3.3-70b</text>
+          <rect x="610" y="358" width="170" height="24" rx="12" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="695" y="374" fill="#0f766e" font-size="10" font-family="Inter" text-anchor="middle">Resilience4j · Circuit Breaker</text>
+        </svg>
+      </div>
+      <span class="badge">Live Demo</span>
+      <h3>VaultFlow — Banking Microservices Platform</h3>
+      <p>Production-grade banking platform with Spring Boot 4 microservices (API Gateway, Accounts, Transactions, Fraud, Notifications) over Kafka. JWT auth with refresh tokens, Resilience4j circuit breakers, AI fraud explanation via Groq/LLaMA-3.3-70b, and a Next.js 14 dashboard.</p>
+      <div class="plinks">
+        <a href="https://vaultflow-ui.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
+        <a href="https://github.com/varshiniv1/VaultFlow" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- CampusTix -->
+    <article class="card">
+      <div class="mock">
+        <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="390" fill="#f8fafc"/>
+          <rect x="0" y="0" width="800" height="40" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="28" y="25" fill="#0d9488" font-size="14" font-family="Inter" font-weight="800">CampusTix</text>
+          <rect x="640" y="8" width="112" height="24" rx="6" fill="#0d9488"/>
+          <text x="696" y="24" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Browse Events</text>
+          <rect x="28" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="28" y="55" width="210" height="56" rx="10" fill="#ccfbf1"/>
+          <rect x="28" y="93" width="210" height="18" fill="#ccfbf1"/>
+          <text x="133" y="128" fill="#1e293b" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Tech Conference 2026</text>
+          <text x="133" y="145" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Jun 15 · 12 seats left</text>
+          <rect x="50" y="158" width="78" height="17" rx="8" fill="#0d9488"/>
+          <text x="89" y="170" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Book Now</text>
+          <rect x="258" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="258" y="55" width="210" height="56" rx="10" fill="#f1f5f9"/>
+          <rect x="258" y="93" width="210" height="18" fill="#f1f5f9"/>
+          <text x="363" y="128" fill="#1e293b" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Spring Hackathon</text>
+          <text x="363" y="145" fill="#ef4444" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">SOLD OUT · Join Waitlist</text>
+          <rect x="278" y="158" width="90" height="17" rx="8" fill="#f1f5f9" stroke="#0d9488" stroke-width="1"/>
+          <text x="323" y="170" fill="#0d9488" font-size="9" font-family="Inter" text-anchor="middle">Join Waitlist</text>
+          <rect x="526" y="46" width="242" height="330" rx="12" fill="#fff" stroke="#0d9488" stroke-width="2"/>
+          <text x="647" y="74" fill="#0d9488" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">YOUR TICKET</text>
+          <line x1="526" y1="85" x2="768" y2="85" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <rect x="583" y="100" width="128" height="128" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="591" y="108" width="27" height="27" rx="3" fill="none" stroke="#0d9488" stroke-width="3"/>
+          <rect x="597" y="114" width="15" height="15" fill="#0d9488"/>
+          <rect x="676" y="108" width="27" height="27" rx="3" fill="none" stroke="#0d9488" stroke-width="3"/>
+          <rect x="682" y="114" width="15" height="15" fill="#0d9488"/>
+          <rect x="591" y="193" width="27" height="27" rx="3" fill="none" stroke="#0d9488" stroke-width="3"/>
+          <rect x="597" y="199" width="15" height="15" fill="#0d9488"/>
+          <rect x="632" y="108" width="8" height="8" fill="#0d9488"/>
+          <rect x="646" y="108" width="8" height="8" fill="#0d9488"/>
+          <rect x="632" y="122" width="8" height="8" fill="#0d9488"/>
+          <rect x="646" y="122" width="16" height="8" fill="#0d9488"/>
+          <rect x="632" y="136" width="8" height="8" fill="#0d9488"/>
+          <rect x="632" y="150" width="16" height="8" fill="#0d9488"/>
+          <rect x="652" y="150" width="8" height="8" fill="#0d9488"/>
+          <text x="647" y="250" fill="#1e293b" font-size="10" font-family="Inter" text-anchor="middle">#TKT-7823 · Seat B4</text>
+          <text x="647" y="266" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Tech Conference 2026</text>
+          <line x1="526" y1="280" x2="768" y2="280" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="647" y="300" fill="#0d9488" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Scan to verify · PDF download</text>
+          <rect x="556" y="316" width="182" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <text x="647" y="331" fill="#0f766e" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">Deployed · Railway</text>
+          <rect x="28" y="200" width="118" height="19" rx="9" fill="#ccfbf1"/>
+          <text x="87" y="213" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle">WebSocket seats</text>
+          <rect x="158" y="200" width="88" height="19" rx="9" fill="#ccfbf1"/>
+          <text x="202" y="213" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle">AI Chatbot</text>
+          <rect x="28" y="226" width="92" height="19" rx="9" fill="#ccfbf1"/>
+          <text x="74" y="239" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle">Email reminders</text>
+          <rect x="132" y="226" width="78" height="19" rx="9" fill="#ccfbf1"/>
+          <text x="171" y="239" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle">Waitlist</text>
+          <rect x="28" y="252" width="88" height="19" rx="9" fill="#ccfbf1"/>
+          <text x="72" y="265" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle">Redis cache</text>
+        </svg>
+      </div>
+      <span class="badge">Live Demo</span>
+      <h3>CampusTix — Event Ticketing Platform</h3>
+      <p>Full-stack ticketing platform deployed on Railway. Real-time seat booking via WebSocket with optimistic locking, AI event chatbot (LLaMA 3.1 via Groq), QR + PDF tickets, automated 24h email reminders, Redis rate limiting, and waitlist with email notifications. Spring Boot 4, PostgreSQL, Redis.</p>
+      <div class="plinks">
+        <a href="https://campustix-production.up.railway.app" target="_blank" rel="noopener">Live Demo →</a>
+        <a href="https://github.com/varshiniv1/CampusTix" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- Secure School -->
+    <article class="card">
+      <div class="mock">
+        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="300" fill="#f8fafc"/>
+          <rect x="80" y="30" width="640" height="240" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+          <rect x="80" y="30" width="150" height="240" rx="12" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="1"/>
+          <rect x="80" y="30" width="150" height="30" rx="12" fill="#0d9488"/>
+          <text x="155" y="50" fill="#fff" font-size="10" font-family="Inter" text-anchor="middle" font-weight="700">MENU</text>
+          <text x="155" y="95" fill="#0d9488" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Students</text>
+          <text x="155" y="120" fill="#64748b" font-size="11" font-family="Inter" text-anchor="middle">Teachers</text>
+          <text x="155" y="145" fill="#64748b" font-size="11" font-family="Inter" text-anchor="middle">Courses</text>
+          <text x="155" y="170" fill="#64748b" font-size="11" font-family="Inter" text-anchor="middle">Reports</text>
+          <rect x="145" y="210" width="44" height="44" rx="6" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+          <rect x="158" y="196" width="18" height="18" rx="9" fill="none" stroke="#0d9488" stroke-width="2.5"/>
+          <circle cx="167" cy="230" r="5" fill="#0d9488"/>
+          <rect x="254" y="55" width="420" height="28" rx="6" fill="#f0fdfa"/>
+          <text x="464" y="74" fill="#0d9488" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Student Management · CRUD</text>
+          <rect x="254" y="100" width="190" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="349" y="136" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Student Records</text>
+          <rect x="458" y="100" width="190" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="553" y="136" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Course Registry</text>
+          <rect x="264" y="195" width="66" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <text x="297" y="210" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">ADMIN</text>
+          <rect x="342" y="195" width="72" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <text x="378" y="210" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">TEACHER</text>
+          <rect x="426" y="195" width="72" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <text x="462" y="210" fill="#0f766e" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">STUDENT</text>
+          <text x="464" y="256" fill="#0d9488" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Spring Security · Role-Based Access Control</text>
+        </svg>
+      </div>
+      <h3>Secure School Management System</h3>
+      <p>Role-based school management platform built with Spring Boot and Spring Security. Full CRUD for students, teachers, and courses with modular REST APIs, JWT authentication, and layered access control (Admin / Teacher / Student).</p>
+      <div class="plinks">
+        <a href="https://github.com/varshiniv1/Secure-School-Management-System" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- E-Commerce MERN -->
+    <article class="card">
+      <div class="mock">
+        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="300" fill="#f8fafc"/>
+          <rect x="0" y="0" width="800" height="40" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="46" y="25" fill="#0d9488" font-size="15" font-family="Inter" font-weight="800">Waves</text>
+          <rect x="596" y="9" width="80" height="22" rx="6" fill="#ccfbf1"/>
+          <text x="636" y="24" fill="#0f766e" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Cart (3)</text>
+          <rect x="34" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="34" y="56" width="140" height="86" rx="10" fill="#ccfbf1"/>
+          <text x="104" y="162" fill="#1e293b" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product A</text>
+          <text x="104" y="178" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">$29.99</text>
+          <rect x="50" y="192" width="108" height="18" rx="4" fill="#0d9488"/>
+          <text x="104" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
+          <rect x="196" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="196" y="56" width="140" height="86" rx="10" fill="#f1f5f9"/>
+          <text x="266" y="162" fill="#1e293b" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product B</text>
+          <text x="266" y="178" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">$49.99</text>
+          <rect x="212" y="192" width="108" height="18" rx="4" fill="#0d9488"/>
+          <text x="266" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
+          <rect x="358" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <rect x="358" y="56" width="140" height="86" rx="10" fill="#f0fdfa"/>
+          <text x="428" y="162" fill="#1e293b" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product C</text>
+          <text x="428" y="178" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">$19.99</text>
+          <rect x="374" y="192" width="108" height="18" rx="4" fill="#0d9488"/>
+          <text x="428" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
+          <rect x="562" y="48" width="210" height="234" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+          <text x="667" y="76" fill="#1e293b" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Order Summary</text>
+          <line x1="572" y1="86" x2="762" y2="86" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="582" y="105" fill="#64748b" font-size="10" font-family="Inter">Product A × 1</text>
+          <text x="752" y="105" fill="#1e293b" font-size="10" font-family="Inter" text-anchor="end">$29.99</text>
+          <text x="582" y="124" fill="#64748b" font-size="10" font-family="Inter">Product C × 2</text>
+          <text x="752" y="124" fill="#1e293b" font-size="10" font-family="Inter" text-anchor="end">$39.98</text>
+          <line x1="572" y1="136" x2="762" y2="136" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="582" y="156" fill="#0d9488" font-size="12" font-family="Inter" font-weight="700">Total</text>
+          <text x="752" y="156" fill="#0d9488" font-size="12" font-family="Inter" font-weight="700" text-anchor="end">$69.97</text>
+          <rect x="577" y="236" width="170" height="36" rx="8" fill="#0d9488"/>
+          <text x="662" y="259" fill="#fff" font-size="12" font-family="Inter" font-weight="700" text-anchor="middle">Checkout</text>
+        </svg>
+      </div>
+      <h3>E-Commerce MERN Application (Waves)</h3>
+      <p>Responsive full-stack e-commerce platform built with MongoDB, Express.js, React, and Node.js. Product browsing with filters, persistent cart, secure checkout, and JWT-based authentication.</p>
+      <div class="plinks">
+        <a href="https://github.com/varshiniv1/E-Commerce-MERN" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- SmartSpender -->
+    <article class="card">
+      <div class="mock">
+        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="800" height="300" fill="#f8fafc"/>
+          <rect x="34" y="24" width="210" height="96" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+          <text x="139" y="60" fill="#64748b" font-size="11" font-family="Inter" text-anchor="middle">Total Balance</text>
+          <text x="139" y="96" fill="#0d9488" font-size="24" font-family="Inter" font-weight="800" text-anchor="middle">$4,820</text>
+          <rect x="270" y="24" width="136" height="96" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="338" y="60" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Income</text>
+          <text x="338" y="96" fill="#10b981" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">+$6,200</text>
+          <rect x="424" y="24" width="136" height="96" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="492" y="60" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Expenses</text>
+          <text x="492" y="96" fill="#ef4444" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">-$1,380</text>
+          <text x="185" y="152" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Monthly Spending</text>
+          <rect x="72" y="238" width="28" height="50" rx="3" fill="#0d9488" opacity=".4"/>
+          <rect x="120" y="200" width="28" height="88" rx="3" fill="#0d9488" opacity=".6"/>
+          <rect x="168" y="174" width="28" height="114" rx="3" fill="#0d9488"/>
+          <rect x="216" y="212" width="28" height="76" rx="3" fill="#0d9488" opacity=".55"/>
+          <rect x="264" y="186" width="28" height="102" rx="3" fill="#0d9488" opacity=".8"/>
+          <text x="86" y="296" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Jan</text>
+          <text x="134" y="296" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Feb</text>
+          <text x="182" y="296" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Mar</text>
+          <text x="230" y="296" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">Apr</text>
+          <text x="278" y="296" fill="#64748b" font-size="9" font-family="Inter" text-anchor="middle">May</text>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#0d9488" stroke-width="28" stroke-dasharray="180 361" stroke-dashoffset="0" opacity=".9"/>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#5eead4" stroke-width="28" stroke-dasharray="120 361" stroke-dashoffset="-180" opacity=".7"/>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#ccfbf1" stroke-width="28" stroke-dasharray="61 361" stroke-dashoffset="-300"/>
+          <text x="580" y="190" fill="#0d9488" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Budget</text>
+          <text x="580" y="208" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">by category</text>
+        </svg>
+      </div>
+      <h3>SmartSpender — Personal Finance Tracker</h3>
+      <p>Full-stack finance tracker with React + Node.js/Express. Income and expense logging, category-based budgeting, and interactive Chart.js visualizations (bar + donut). JWT auth and MongoDB persistence.</p>
+      <div class="plinks">
+        <a href="https://github.com/varshiniv1/SmartSpender" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- IMDB DB Engine -->
+    <article class="card full">
+      <div class="mock">
+        <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="280" fill="#f8fafc"/>
+          <text x="115" y="24" fill="#0d9488" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Storage</text>
+          <g transform="translate(40,40)">
+            <ellipse cx="75" cy="0" rx="75" ry="15" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+            <rect x="0" y="0" width="150" height="135" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+            <ellipse cx="75" cy="135" rx="75" ry="15" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+            <line x1="15" y1="44" x2="135" y2="44" stroke="#ccfbf1" stroke-width="5"/>
+            <line x1="15" y1="78" x2="135" y2="78" stroke="#ccfbf1" stroke-width="5"/>
+            <line x1="15" y1="112" x2="135" y2="112" stroke="#ccfbf1" stroke-width="5"/>
+            <text x="75" y="164" fill="#0d9488" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Buffer Manager</text>
+            <text x="75" y="180" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">LRU Eviction</text>
+          </g>
+          <path d="M192,110 C235,110 255,110 288,110" stroke="#0d9488" stroke-width="2.5" fill="none"/>
+          <polygon points="284,104 294,110 284,116" fill="#0d9488"/>
+          <text x="430" y="24" fill="#0d9488" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">B+-Tree Index</text>
+          <rect x="400" y="38" width="60" height="28" rx="5" fill="#fff" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="430" y="57" fill="#0d9488" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Root</text>
+          <rect x="320" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="350" y="113" fill="#0d9488" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
+          <rect x="480" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="510" y="113" fill="#0d9488" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
+          <line x1="430" y1="66" x2="350" y2="94" stroke="#0d9488" stroke-width="1.5"/>
+          <line x1="430" y1="66" x2="510" y2="94" stroke="#0d9488" stroke-width="1.5"/>
+          <rect x="295" y="152" width="48" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <rect x="350" y="152" width="48" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <rect x="453" y="152" width="48" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <rect x="508" y="152" width="48" height="22" rx="4" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+          <line x1="350" y1="122" x2="319" y2="152" stroke="#0d9488" stroke-width="1" opacity=".6"/>
+          <line x1="350" y1="122" x2="374" y2="152" stroke="#0d9488" stroke-width="1" opacity=".6"/>
+          <line x1="510" y1="122" x2="477" y2="152" stroke="#0d9488" stroke-width="1" opacity=".6"/>
+          <line x1="510" y1="122" x2="532" y2="152" stroke="#0d9488" stroke-width="1" opacity=".6"/>
+          <path d="M563,110 C606,110 626,110 660,110" stroke="#0d9488" stroke-width="2.5" fill="none"/>
+          <polygon points="656,104 666,110 656,116" fill="#0d9488"/>
+          <text x="760" y="24" fill="#0d9488" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Query Executor</text>
+          <rect x="682" y="40" width="156" height="76" rx="8" fill="#fff" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="760" y="78" fill="#64748b" font-size="10" font-family="Inter" text-anchor="middle">Range Scan</text>
+          <text x="760" y="96" fill="#0d9488" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">titles A → Z</text>
+          <rect x="660" y="192" width="200" height="46" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+          <text x="760" y="214" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Validated against</text>
+          <text x="760" y="230" fill="#0f766e" font-size="11" font-family="Inter" text-anchor="middle">PostgreSQL</text>
+          <line x1="760" y1="116" x2="760" y2="192" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="5,3"/>
+        </svg>
+      </div>
+      <h3>IMDB Data Management &amp; Query System</h3>
+      <p>Custom disk-based database engine in Java over the IMDB dataset. Built a Buffer Manager (LRU eviction), B+-Tree index for efficient range scans, and a query executor processing millions of records. Correctness validated against PostgreSQL — demonstrating deep understanding of database internals.</p>
+      <div class="plinks">
+        <a href="https://github.com/varshiniv1/Disk-based-Database-Engine" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+  </div>
 </div>
 </section>
 
-<footer>© <span id="year"></span> Varshini Venkataraman</footer>
+<!-- PUBLICATION -->
+<section id="publication" class="section" style="background:var(--bg-2)">
+<div class="container" data-animate>
+  <h2>Publi<span>cation</span></h2>
+  <div class="card" style="text-align:center;max-width:760px;margin:0 auto">
+    <h3>Weed Plant Detection in Agricultural Field Using Deep Learning Integrated with IoT</h3>
+    <p><strong>2024 5th International Conference on Communication, Computing and Internet of Things (IC3IoT)</strong></p>
+    <div class="mock" style="max-width:560px;margin:1rem auto">
+      <img src="paper img.png" alt="Weed Detection System Flowchart" style="width:100%;border-radius:8px;display:block">
+    </div>
+    <a href="https://ieeexplore.ieee.org/abstract/document/10593389" target="_blank" rel="noopener" class="btn primary">📄 Read on IEEE Xplore</a>
+  </div>
+</div>
+</section>
+
+<!-- WRITING -->
+<section id="writing" class="section">
+<div class="container" data-animate>
+  <h2>Wri<span>ting</span></h2>
+  <div class="card" style="max-width:720px;margin:0 auto;text-align:left">
+    <div class="meta" style="margin-bottom:.5rem">May 2026 · Medium</div>
+    <h3 style="margin:.15rem 0 .6rem">I tried replacing Google with AI for a week — here's what broke</h3>
+    <p>And what it made me realize about how I actually learn. A reflection on AI-assisted research, productive struggle, and why getting an answer fast isn't the same as understanding it.</p>
+    <a href="https://medium.com/@varshini.venkat1/i-tried-replacing-google-with-ai-for-a-week-heres-what-broke-12a758fcf7cc" target="_blank" rel="noopener" class="btn ghost" style="margin-top:.9rem;display:inline-flex">Read on Medium →</a>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" style="background:var(--bg-2)">
+<div class="container" data-animate>
+  <h2>Get In <span>Touch</span></h2>
+  <p class="meta" style="max-width:680px;margin:0 auto 1.6rem;font-size:1rem">Open to full-time Software Engineering roles. Let's build something great together.</p>
+  <div class="socials">
+    <a href="mailto:varshini.venkat1@gmail.com">📧 Email</a>
+    <a href="https://linkedin.com/in/varshinivenkataraman" target="_blank" rel="noopener">💼 LinkedIn</a>
+    <a href="https://github.com/varshiniv1" target="_blank" rel="noopener">💻 GitHub</a>
+    <a href="https://medium.com/@varshini.venkat1" target="_blank" rel="noopener">✍️ Medium</a>
+  </div>
+</div>
+</section>
+
+<footer>© <span id="yr"></span> Varshini Venkataraman</footer>
 
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-// fade-in
-const els=document.querySelectorAll('[data-animate]');
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
-els.forEach(x=>io.observe(x));
-// theme toggle
-const toggle=document.getElementById('themeToggle');
-toggle.addEventListener('click',()=>{
-  document.body.classList.toggle('light');
-  toggle.textContent=document.body.classList.contains('light')?'🌙':'☀️';
-});
-
-// Detect system theme on load
-if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
-  document.body.classList.add('light');
-  toggle.textContent='🌙';
-}
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('[data-animate]').forEach(x=>io.observe(x));
 </script>
-
 </body>
 </html>
