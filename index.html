@@ -8,18 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --accent:#e8561f;
-  --accent-2:#c4451a;
-  --accent-light:#fff4ef;
-  --accent-mid:#fda07a;
-  --bg:#fffdf9;
-  --bg-2:#fff8f2;
+  --accent:#d97706;
+  --accent-2:#b45309;
+  --accent-light:#fffbeb;
+  --accent-mid:#fbbf24;
+  --bg:#fffdf5;
+  --bg-2:#fffaed;
   --card:#ffffff;
-  --text:#292524;
+  --text:#1c1917;
   --muted:#78716c;
-  --border:#ede9e6;
-  --shadow:rgba(232,86,31,.10);
-  --shadow-hover:rgba(232,86,31,.20);
+  --border:#e7e5e4;
+  --shadow:rgba(217,119,6,.10);
+  --shadow-hover:rgba(217,119,6,.22);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
@@ -38,32 +38,41 @@ nav a:hover{color:var(--accent)}
 .container{max-width:1080px;margin:0 auto;padding:0 1.4rem}
 .section{padding:5.5rem 0;text-align:center}
 .section h2{
-  font-size:1.9rem;font-weight:800;color:var(--text);margin:0 0 2.8rem;
-  position:relative;display:inline-block;letter-spacing:-.4px;
+  font-size:2rem;font-weight:800;color:var(--text);margin:0 0 2.8rem;
+  position:relative;display:inline-block;letter-spacing:-.5px;
 }
-.section h2 span{color:var(--accent)}
 .section h2::after{
   content:"";position:absolute;left:0;bottom:-10px;
-  width:40px;height:3px;background:var(--accent);border-radius:2px;
+  width:48px;height:4px;background:var(--accent);border-radius:3px;
 }
+/* hero stats */
+.hero-stats{display:flex;gap:0;margin-top:1.8rem;flex-wrap:wrap;border:1px solid var(--border);border-radius:12px;overflow:hidden;width:fit-content}
+.hstat{
+  display:flex;flex-direction:column;align-items:center;
+  padding:.75rem 1.4rem;gap:.15rem;
+  border-right:1px solid var(--border);background:var(--card);
+}
+.hstat:last-child{border-right:none}
+.hstat-num{font-size:1.4rem;font-weight:800;color:var(--accent);line-height:1.1}
+.hstat-label{font-size:.68rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.7px;white-space:nowrap}
 /* HERO */
 .hero{
   padding-top:5.5rem;min-height:100vh;
   display:flex;align-items:center;
-  background:linear-gradient(135deg,#fff4ef 0%,#fffdf9 55%,#fff8f2 100%);
+  background:linear-gradient(135deg,#fffbeb 0%,#fffdf5 55%,#fffaed 100%);
   border-bottom:1px solid var(--border);
   position:relative;overflow:hidden;
 }
 .hero::before{
   content:'';position:absolute;top:-200px;right:-200px;
   width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,86,31,.07) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(217,119,6,.07) 0%,transparent 70%);
   pointer-events:none;
 }
 .hero-wrap{display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;padding:3rem 0}
 .headshot{
   width:240px;height:240px;border-radius:50%;overflow:hidden;flex-shrink:0;
-  box-shadow:0 0 0 4px var(--accent-light),0 0 0 7px var(--accent),0 20px 48px rgba(232,86,31,.18);
+  box-shadow:0 0 0 4px var(--accent-light),0 0 0 7px var(--accent),0 20px 48px rgba(217,119,6,.18);
 }
 .headshot img{width:100%;height:100%;object-fit:cover}
 .hero-text h1{font-size:2.7rem;font-weight:800;line-height:1.15;letter-spacing:-.6px;color:var(--text)}
@@ -73,7 +82,7 @@ nav a:hover{color:var(--accent)}
   display:inline-flex;align-items:center;gap:.6rem;
   margin-top:.9rem;background:var(--accent-light);
   color:var(--accent-2);font-weight:700;font-size:.85rem;
-  padding:.45rem 1rem;border-radius:20px;border:1px solid rgba(232,86,31,.25);
+  padding:.45rem 1rem;border-radius:20px;border:1px solid rgba(217,119,6,.25);
 }
 .pulse{
   width:9px;height:9px;background:#10b981;border-radius:50%;flex-shrink:0;
@@ -184,6 +193,12 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
       <a class="btn primary" href="https://drive.google.com/file/d/1gf5nsK1F2O_6Zb_YzUjT6hVheVX7Ymgu/view?usp=drive_link" target="_blank">View Resume</a>
       <a class="btn ghost" href="#contact">Let's Connect</a>
     </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-num">2</span><span class="hstat-label">Live Apps</span></div>
+      <div class="hstat"><span class="hstat-num">3.81</span><span class="hstat-label">MS GPA</span></div>
+      <div class="hstat"><span class="hstat-num">3+</span><span class="hstat-label">Internships</span></div>
+      <div class="hstat"><span class="hstat-num">IEEE</span><span class="hstat-label">Published</span></div>
+    </div>
   </div>
 </div>
 </header>
@@ -191,7 +206,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- ABOUT -->
 <section id="about" class="section">
 <div class="container" data-animate>
-  <h2>About <span>Me</span></h2>
+  <h2>About Me</h2>
   <p class="about-text">I'm a Full-Stack Developer and recent MSCS graduate from UMass Amherst with a track record of shipping production-grade software. I've built microservices platforms with Kafka and Spring Boot, AI-integrated applications deployed in the cloud, and real-time event systems — all in live codebases. Alongside that, I'm building an LLM-as-a-Judge framework for cybersecurity at UMass Amherst and have published an IEEE paper on deep learning. I'm actively seeking full-time Software Engineering roles and available to start immediately.</p>
 </div>
 </section>
@@ -199,7 +214,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- EDUCATION -->
 <section id="education" class="section" style="background:var(--bg-2)">
 <div class="container" data-animate>
-  <h2>Edu<span>cation</span></h2>
+  <h2>Education</h2>
   <div class="cards">
     <article class="card">
       <h3>M.S. Computer Science</h3>
@@ -220,7 +235,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
 <div class="container" data-animate>
-  <h2>Experi<span>ence</span></h2>
+  <h2>Experience</h2>
   <div class="cards">
 
     <article class="card exp-card">
@@ -255,7 +270,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- SKILLS -->
 <section id="skills" class="section" style="background:var(--bg-2)">
 <div class="container" data-animate>
-  <h2>Tech<span>nical Skills</span></h2>
+  <h2>Technical Skills</h2>
   <div class="skill-grid">
     <div>
       <div class="skill-cat-label">Languages</div>
@@ -300,42 +315,42 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- PROJECTS -->
 <section id="projects" class="section">
 <div class="container" data-animate>
-  <h2>Pro<span>jects</span></h2>
+  <h2>Projects</h2>
   <div class="cards">
 
     <!-- VaultFlow -->
     <article class="card">
       <div class="mock">
         <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="390" fill="#fff8f2"/>
-          <text x="400" y="26" fill="#e8561f" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Microservices Architecture</text>
-          <rect x="285" y="38" width="230" height="40" rx="8" fill="#fff" stroke="#e8561f" stroke-width="2"/>
-          <text x="400" y="63" fill="#e8561f" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">Next.js 14 Dashboard</text>
-          <line x1="400" y1="78" x2="400" y2="118" stroke="#e8561f" stroke-width="1.5"/>
-          <polygon points="394,115 400,123 406,115" fill="#e8561f"/>
-          <rect x="285" y="120" width="230" height="40" rx="8" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="400" y="145" fill="#c4451a" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">API Gateway · JWT · Rate-limit</text>
-          <line x1="350" y1="160" x2="100" y2="215" stroke="#e8561f" stroke-width="1" opacity=".45"/>
-          <line x1="370" y1="160" x2="280" y2="215" stroke="#e8561f" stroke-width="1" opacity=".45"/>
-          <line x1="430" y1="160" x2="520" y2="215" stroke="#e8561f" stroke-width="1" opacity=".45"/>
-          <line x1="450" y1="160" x2="700" y2="215" stroke="#e8561f" stroke-width="1" opacity=".45"/>
-          <rect x="20" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fda07a" stroke-width="1.5"/>
-          <text x="100" y="240" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle">Accounts</text>
-          <rect x="200" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fda07a" stroke-width="1.5"/>
-          <text x="280" y="240" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle">Transactions</text>
-          <rect x="440" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fda07a" stroke-width="1.5"/>
-          <text x="520" y="240" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle">Fraud Detection</text>
-          <rect x="620" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fda07a" stroke-width="1.5"/>
-          <text x="700" y="240" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle">Notifications</text>
-          <rect x="155" y="310" width="490" height="36" rx="8" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="400" y="333" fill="#c4451a" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Kafka Event Bus</text>
-          <line x1="280" y1="255" x2="280" y2="310" stroke="#e8561f" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="520" y1="255" x2="520" y2="310" stroke="#e8561f" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="700" y1="255" x2="610" y2="310" stroke="#e8561f" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <rect x="20" y="358" width="170" height="24" rx="12" fill="#e8561f"/>
+          <rect width="800" height="390" fill="#fffaed"/>
+          <text x="400" y="26" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Microservices Architecture</text>
+          <rect x="285" y="38" width="230" height="40" rx="8" fill="#fff" stroke="#d97706" stroke-width="2"/>
+          <text x="400" y="63" fill="#d97706" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">Next.js 14 Dashboard</text>
+          <line x1="400" y1="78" x2="400" y2="118" stroke="#d97706" stroke-width="1.5"/>
+          <polygon points="394,115 400,123 406,115" fill="#d97706"/>
+          <rect x="285" y="120" width="230" height="40" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+          <text x="400" y="145" fill="#b45309" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">API Gateway · JWT · Rate-limit</text>
+          <line x1="350" y1="160" x2="100" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
+          <line x1="370" y1="160" x2="280" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
+          <line x1="430" y1="160" x2="520" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
+          <line x1="450" y1="160" x2="700" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
+          <rect x="20" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="100" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Accounts</text>
+          <rect x="200" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="280" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Transactions</text>
+          <rect x="440" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="520" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Fraud Detection</text>
+          <rect x="620" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="700" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Notifications</text>
+          <rect x="155" y="310" width="490" height="36" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+          <text x="400" y="333" fill="#b45309" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Kafka Event Bus</text>
+          <line x1="280" y1="255" x2="280" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <line x1="520" y1="255" x2="520" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <line x1="700" y1="255" x2="610" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
+          <rect x="20" y="358" width="170" height="24" rx="12" fill="#d97706"/>
           <text x="105" y="374" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">AI · Groq LLaMA-3.3-70b</text>
-          <rect x="610" y="358" width="170" height="24" rx="12" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="695" y="374" fill="#c4451a" font-size="10" font-family="Inter" text-anchor="middle">Resilience4j · Circuit Breaker</text>
+          <rect x="610" y="358" width="170" height="24" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+          <text x="695" y="374" fill="#b45309" font-size="10" font-family="Inter" text-anchor="middle">Resilience4j · Circuit Breaker</text>
         </svg>
       </div>
       <span class="badge">Live Demo</span>
@@ -351,58 +366,58 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
     <article class="card">
       <div class="mock">
         <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="390" fill="#fff8f2"/>
+          <rect width="800" height="390" fill="#fffaed"/>
           <rect x="0" y="0" width="800" height="40" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="28" y="25" fill="#e8561f" font-size="14" font-family="Inter" font-weight="800">CampusTix</text>
-          <rect x="640" y="8" width="112" height="24" rx="6" fill="#e8561f"/>
+          <text x="28" y="25" fill="#d97706" font-size="14" font-family="Inter" font-weight="800">CampusTix</text>
+          <rect x="640" y="8" width="112" height="24" rx="6" fill="#d97706"/>
           <text x="696" y="24" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Browse Events</text>
           <rect x="28" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="28" y="55" width="210" height="56" rx="10" fill="#fff4ef"/>
-          <rect x="28" y="93" width="210" height="18" fill="#fff4ef"/>
+          <rect x="28" y="55" width="210" height="56" rx="10" fill="#fffbeb"/>
+          <rect x="28" y="93" width="210" height="18" fill="#fffbeb"/>
           <text x="133" y="128" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Tech Conference 2026</text>
           <text x="133" y="145" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Jun 15 · 12 seats left</text>
-          <rect x="50" y="158" width="78" height="17" rx="8" fill="#e8561f"/>
+          <rect x="50" y="158" width="78" height="17" rx="8" fill="#d97706"/>
           <text x="89" y="170" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Book Now</text>
           <rect x="258" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="258" y="55" width="210" height="56" rx="10" fill="#fdf0eb"/>
-          <rect x="258" y="93" width="210" height="18" fill="#fdf0eb"/>
+          <rect x="258" y="55" width="210" height="56" rx="10" fill="#fef3c7"/>
+          <rect x="258" y="93" width="210" height="18" fill="#fef3c7"/>
           <text x="363" y="128" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Spring Hackathon</text>
           <text x="363" y="145" fill="#ef4444" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">SOLD OUT · Join Waitlist</text>
-          <rect x="278" y="158" width="90" height="17" rx="8" fill="#fdf0eb" stroke="#e8561f" stroke-width="1"/>
-          <text x="323" y="170" fill="#e8561f" font-size="9" font-family="Inter" text-anchor="middle">Join Waitlist</text>
-          <rect x="526" y="46" width="242" height="330" rx="12" fill="#fff" stroke="#e8561f" stroke-width="2"/>
-          <text x="647" y="74" fill="#e8561f" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">YOUR TICKET</text>
+          <rect x="278" y="158" width="90" height="17" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+          <text x="323" y="170" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle">Join Waitlist</text>
+          <rect x="526" y="46" width="242" height="330" rx="12" fill="#fff" stroke="#d97706" stroke-width="2"/>
+          <text x="647" y="74" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">YOUR TICKET</text>
           <line x1="526" y1="85" x2="768" y2="85" stroke="#ede9e6" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <rect x="583" y="100" width="128" height="128" rx="4" fill="#fff8f2" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="591" y="108" width="27" height="27" rx="3" fill="none" stroke="#e8561f" stroke-width="3"/>
-          <rect x="597" y="114" width="15" height="15" fill="#e8561f"/>
-          <rect x="676" y="108" width="27" height="27" rx="3" fill="none" stroke="#e8561f" stroke-width="3"/>
-          <rect x="682" y="114" width="15" height="15" fill="#e8561f"/>
-          <rect x="591" y="193" width="27" height="27" rx="3" fill="none" stroke="#e8561f" stroke-width="3"/>
-          <rect x="597" y="199" width="15" height="15" fill="#e8561f"/>
-          <rect x="632" y="108" width="8" height="8" fill="#e8561f"/>
-          <rect x="646" y="108" width="8" height="8" fill="#e8561f"/>
-          <rect x="632" y="122" width="8" height="8" fill="#e8561f"/>
-          <rect x="646" y="122" width="16" height="8" fill="#e8561f"/>
-          <rect x="632" y="136" width="8" height="8" fill="#e8561f"/>
-          <rect x="632" y="150" width="16" height="8" fill="#e8561f"/>
-          <rect x="652" y="150" width="8" height="8" fill="#e8561f"/>
+          <rect x="583" y="100" width="128" height="128" rx="4" fill="#fffaed" stroke="#ede9e6" stroke-width="1"/>
+          <rect x="591" y="108" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
+          <rect x="597" y="114" width="15" height="15" fill="#d97706"/>
+          <rect x="676" y="108" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
+          <rect x="682" y="114" width="15" height="15" fill="#d97706"/>
+          <rect x="591" y="193" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
+          <rect x="597" y="199" width="15" height="15" fill="#d97706"/>
+          <rect x="632" y="108" width="8" height="8" fill="#d97706"/>
+          <rect x="646" y="108" width="8" height="8" fill="#d97706"/>
+          <rect x="632" y="122" width="8" height="8" fill="#d97706"/>
+          <rect x="646" y="122" width="16" height="8" fill="#d97706"/>
+          <rect x="632" y="136" width="8" height="8" fill="#d97706"/>
+          <rect x="632" y="150" width="16" height="8" fill="#d97706"/>
+          <rect x="652" y="150" width="8" height="8" fill="#d97706"/>
           <text x="647" y="250" fill="#292524" font-size="10" font-family="Inter" text-anchor="middle">#TKT-7823 · Seat B4</text>
           <text x="647" y="266" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Tech Conference 2026</text>
           <line x1="526" y1="280" x2="768" y2="280" stroke="#ede9e6" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <text x="647" y="300" fill="#e8561f" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Scan to verify · PDF download</text>
-          <rect x="556" y="316" width="182" height="22" rx="11" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <text x="647" y="331" fill="#c4451a" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">Deployed · Railway</text>
-          <rect x="28" y="200" width="118" height="19" rx="9" fill="#fff4ef"/>
-          <text x="87" y="213" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle">WebSocket seats</text>
-          <rect x="158" y="200" width="88" height="19" rx="9" fill="#fff4ef"/>
-          <text x="202" y="213" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle">AI Chatbot</text>
-          <rect x="28" y="226" width="92" height="19" rx="9" fill="#fff4ef"/>
-          <text x="74" y="239" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle">Email reminders</text>
-          <rect x="132" y="226" width="78" height="19" rx="9" fill="#fff4ef"/>
-          <text x="171" y="239" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle">Waitlist</text>
-          <rect x="28" y="252" width="88" height="19" rx="9" fill="#fff4ef"/>
-          <text x="72" y="265" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle">Redis cache</text>
+          <text x="647" y="300" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Scan to verify · PDF download</text>
+          <rect x="556" y="316" width="182" height="22" rx="11" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <text x="647" y="331" fill="#b45309" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">Deployed · Railway</text>
+          <rect x="28" y="200" width="118" height="19" rx="9" fill="#fffbeb"/>
+          <text x="87" y="213" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">WebSocket seats</text>
+          <rect x="158" y="200" width="88" height="19" rx="9" fill="#fffbeb"/>
+          <text x="202" y="213" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">AI Chatbot</text>
+          <rect x="28" y="226" width="92" height="19" rx="9" fill="#fffbeb"/>
+          <text x="74" y="239" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Email reminders</text>
+          <rect x="132" y="226" width="78" height="19" rx="9" fill="#fffbeb"/>
+          <text x="171" y="239" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Waitlist</text>
+          <rect x="28" y="252" width="88" height="19" rx="9" fill="#fffbeb"/>
+          <text x="72" y="265" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Redis cache</text>
         </svg>
       </div>
       <span class="badge">Live Demo</span>
@@ -418,31 +433,31 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
     <article class="card">
       <div class="mock">
         <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fff8f2"/>
+          <rect width="800" height="300" fill="#fffaed"/>
           <rect x="80" y="30" width="640" height="240" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1.5"/>
-          <rect x="80" y="30" width="150" height="240" rx="12" fill="#fff4ef" stroke="#fff4ef" stroke-width="1"/>
-          <rect x="80" y="30" width="150" height="30" rx="12" fill="#e8561f"/>
+          <rect x="80" y="30" width="150" height="240" rx="12" fill="#fffbeb" stroke="#fffbeb" stroke-width="1"/>
+          <rect x="80" y="30" width="150" height="30" rx="12" fill="#d97706"/>
           <text x="155" y="50" fill="#fff" font-size="10" font-family="Inter" text-anchor="middle" font-weight="700">MENU</text>
-          <text x="155" y="95" fill="#e8561f" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Students</text>
+          <text x="155" y="95" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Students</text>
           <text x="155" y="120" fill="#78716c" font-size="11" font-family="Inter" text-anchor="middle">Teachers</text>
           <text x="155" y="145" fill="#78716c" font-size="11" font-family="Inter" text-anchor="middle">Courses</text>
           <text x="155" y="170" fill="#78716c" font-size="11" font-family="Inter" text-anchor="middle">Reports</text>
-          <rect x="145" y="210" width="44" height="44" rx="6" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-          <rect x="158" y="196" width="18" height="18" rx="9" fill="none" stroke="#e8561f" stroke-width="2.5"/>
-          <circle cx="167" cy="230" r="5" fill="#e8561f"/>
-          <rect x="254" y="55" width="420" height="28" rx="6" fill="#fff4ef"/>
-          <text x="464" y="74" fill="#e8561f" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Student Management · CRUD</text>
-          <rect x="254" y="100" width="190" height="62" rx="6" fill="#fff8f2" stroke="#ede9e6" stroke-width="1"/>
+          <rect x="145" y="210" width="44" height="44" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+          <rect x="158" y="196" width="18" height="18" rx="9" fill="none" stroke="#d97706" stroke-width="2.5"/>
+          <circle cx="167" cy="230" r="5" fill="#d97706"/>
+          <rect x="254" y="55" width="420" height="28" rx="6" fill="#fffbeb"/>
+          <text x="464" y="74" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Student Management · CRUD</text>
+          <rect x="254" y="100" width="190" height="62" rx="6" fill="#fffaed" stroke="#ede9e6" stroke-width="1"/>
           <text x="349" y="136" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Student Records</text>
-          <rect x="458" y="100" width="190" height="62" rx="6" fill="#fff8f2" stroke="#ede9e6" stroke-width="1"/>
+          <rect x="458" y="100" width="190" height="62" rx="6" fill="#fffaed" stroke="#ede9e6" stroke-width="1"/>
           <text x="553" y="136" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Course Registry</text>
-          <rect x="264" y="195" width="66" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <text x="297" y="210" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">ADMIN</text>
-          <rect x="342" y="195" width="72" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <text x="378" y="210" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">TEACHER</text>
-          <rect x="426" y="195" width="72" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <text x="462" y="210" fill="#c4451a" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">STUDENT</text>
-          <text x="464" y="256" fill="#e8561f" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Spring Security · Role-Based Access Control</text>
+          <rect x="264" y="195" width="66" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <text x="297" y="210" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">ADMIN</text>
+          <rect x="342" y="195" width="72" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <text x="378" y="210" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">TEACHER</text>
+          <rect x="426" y="195" width="72" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <text x="462" y="210" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">STUDENT</text>
+          <text x="464" y="256" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Spring Security · Role-Based Access Control</text>
         </svg>
       </div>
       <h3>Secure School Management System</h3>
@@ -456,28 +471,28 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
     <article class="card">
       <div class="mock">
         <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fff8f2"/>
+          <rect width="800" height="300" fill="#fffaed"/>
           <rect x="0" y="0" width="800" height="40" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="46" y="25" fill="#e8561f" font-size="15" font-family="Inter" font-weight="800">Waves</text>
-          <rect x="596" y="9" width="80" height="22" rx="6" fill="#fff4ef"/>
-          <text x="636" y="24" fill="#c4451a" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Cart (3)</text>
+          <text x="46" y="25" fill="#d97706" font-size="15" font-family="Inter" font-weight="800">Waves</text>
+          <rect x="596" y="9" width="80" height="22" rx="6" fill="#fffbeb"/>
+          <text x="636" y="24" fill="#b45309" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Cart (3)</text>
           <rect x="34" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="34" y="56" width="140" height="86" rx="10" fill="#fff4ef"/>
+          <rect x="34" y="56" width="140" height="86" rx="10" fill="#fffbeb"/>
           <text x="104" y="162" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product A</text>
           <text x="104" y="178" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">$29.99</text>
-          <rect x="50" y="192" width="108" height="18" rx="4" fill="#e8561f"/>
+          <rect x="50" y="192" width="108" height="18" rx="4" fill="#d97706"/>
           <text x="104" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
           <rect x="196" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="196" y="56" width="140" height="86" rx="10" fill="#fdf0eb"/>
+          <rect x="196" y="56" width="140" height="86" rx="10" fill="#fef3c7"/>
           <text x="266" y="162" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product B</text>
           <text x="266" y="178" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">$49.99</text>
-          <rect x="212" y="192" width="108" height="18" rx="4" fill="#e8561f"/>
+          <rect x="212" y="192" width="108" height="18" rx="4" fill="#d97706"/>
           <text x="266" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
           <rect x="358" y="56" width="140" height="166" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="358" y="56" width="140" height="86" rx="10" fill="#fff4ef"/>
+          <rect x="358" y="56" width="140" height="86" rx="10" fill="#fffbeb"/>
           <text x="428" y="162" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Product C</text>
           <text x="428" y="178" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">$19.99</text>
-          <rect x="374" y="192" width="108" height="18" rx="4" fill="#e8561f"/>
+          <rect x="374" y="192" width="108" height="18" rx="4" fill="#d97706"/>
           <text x="428" y="205" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Add to Cart</text>
           <rect x="562" y="48" width="210" height="234" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1.5"/>
           <text x="667" y="76" fill="#292524" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Order Summary</text>
@@ -487,9 +502,9 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
           <text x="582" y="124" fill="#78716c" font-size="10" font-family="Inter">Product C × 2</text>
           <text x="752" y="124" fill="#292524" font-size="10" font-family="Inter" text-anchor="end">$39.98</text>
           <line x1="572" y1="136" x2="762" y2="136" stroke="#ede9e6" stroke-width="1"/>
-          <text x="582" y="156" fill="#e8561f" font-size="12" font-family="Inter" font-weight="700">Total</text>
-          <text x="752" y="156" fill="#e8561f" font-size="12" font-family="Inter" font-weight="700" text-anchor="end">$69.97</text>
-          <rect x="577" y="236" width="170" height="36" rx="8" fill="#e8561f"/>
+          <text x="582" y="156" fill="#d97706" font-size="12" font-family="Inter" font-weight="700">Total</text>
+          <text x="752" y="156" fill="#d97706" font-size="12" font-family="Inter" font-weight="700" text-anchor="end">$69.97</text>
+          <rect x="577" y="236" width="170" height="36" rx="8" fill="#d97706"/>
           <text x="662" y="259" fill="#fff" font-size="12" font-family="Inter" font-weight="700" text-anchor="middle">Checkout</text>
         </svg>
       </div>
@@ -504,10 +519,10 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
     <article class="card">
       <div class="mock">
         <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fff8f2"/>
+          <rect width="800" height="300" fill="#fffaed"/>
           <rect x="34" y="24" width="210" height="96" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1.5"/>
           <text x="139" y="60" fill="#78716c" font-size="11" font-family="Inter" text-anchor="middle">Total Balance</text>
-          <text x="139" y="96" fill="#e8561f" font-size="24" font-family="Inter" font-weight="800" text-anchor="middle">$4,820</text>
+          <text x="139" y="96" fill="#d97706" font-size="24" font-family="Inter" font-weight="800" text-anchor="middle">$4,820</text>
           <rect x="270" y="24" width="136" height="96" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
           <text x="338" y="60" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Income</text>
           <text x="338" y="96" fill="#10b981" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">+$6,200</text>
@@ -515,20 +530,20 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
           <text x="492" y="60" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Expenses</text>
           <text x="492" y="96" fill="#ef4444" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">-$1,380</text>
           <text x="185" y="152" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Monthly Spending</text>
-          <rect x="72" y="238" width="28" height="50" rx="3" fill="#e8561f" opacity=".4"/>
-          <rect x="120" y="200" width="28" height="88" rx="3" fill="#e8561f" opacity=".6"/>
-          <rect x="168" y="174" width="28" height="114" rx="3" fill="#e8561f"/>
-          <rect x="216" y="212" width="28" height="76" rx="3" fill="#e8561f" opacity=".55"/>
-          <rect x="264" y="186" width="28" height="102" rx="3" fill="#e8561f" opacity=".8"/>
+          <rect x="72" y="238" width="28" height="50" rx="3" fill="#d97706" opacity=".4"/>
+          <rect x="120" y="200" width="28" height="88" rx="3" fill="#d97706" opacity=".6"/>
+          <rect x="168" y="174" width="28" height="114" rx="3" fill="#d97706"/>
+          <rect x="216" y="212" width="28" height="76" rx="3" fill="#d97706" opacity=".55"/>
+          <rect x="264" y="186" width="28" height="102" rx="3" fill="#d97706" opacity=".8"/>
           <text x="86" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Jan</text>
           <text x="134" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Feb</text>
           <text x="182" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Mar</text>
           <text x="230" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Apr</text>
           <text x="278" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">May</text>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#e8561f" stroke-width="28" stroke-dasharray="180 361" stroke-dashoffset="0" opacity=".9"/>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#fda07a" stroke-width="28" stroke-dasharray="120 361" stroke-dashoffset="-180" opacity=".7"/>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#fff4ef" stroke-width="28" stroke-dasharray="61 361" stroke-dashoffset="-300"/>
-          <text x="580" y="190" fill="#e8561f" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Budget</text>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#d97706" stroke-width="28" stroke-dasharray="180 361" stroke-dashoffset="0" opacity=".9"/>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#fbbf24" stroke-width="28" stroke-dasharray="120 361" stroke-dashoffset="-180" opacity=".7"/>
+          <circle cx="580" cy="195" r="86" fill="none" stroke="#fffbeb" stroke-width="28" stroke-dasharray="61 361" stroke-dashoffset="-300"/>
+          <text x="580" y="190" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Budget</text>
           <text x="580" y="208" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">by category</text>
         </svg>
       </div>
@@ -543,47 +558,47 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
     <article class="card full">
       <div class="mock">
         <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
-          <rect width="900" height="280" fill="#fff8f2"/>
-          <text x="115" y="24" fill="#e8561f" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Storage</text>
+          <rect width="900" height="280" fill="#fffaed"/>
+          <text x="115" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Storage</text>
           <g transform="translate(40,40)">
-            <ellipse cx="75" cy="0" rx="75" ry="15" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-            <rect x="0" y="0" width="150" height="135" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-            <ellipse cx="75" cy="135" rx="75" ry="15" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-            <line x1="15" y1="44" x2="135" y2="44" stroke="#fff4ef" stroke-width="5"/>
-            <line x1="15" y1="78" x2="135" y2="78" stroke="#fff4ef" stroke-width="5"/>
-            <line x1="15" y1="112" x2="135" y2="112" stroke="#fff4ef" stroke-width="5"/>
-            <text x="75" y="164" fill="#e8561f" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Buffer Manager</text>
+            <ellipse cx="75" cy="0" rx="75" ry="15" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+            <rect x="0" y="0" width="150" height="135" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+            <ellipse cx="75" cy="135" rx="75" ry="15" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+            <line x1="15" y1="44" x2="135" y2="44" stroke="#fffbeb" stroke-width="5"/>
+            <line x1="15" y1="78" x2="135" y2="78" stroke="#fffbeb" stroke-width="5"/>
+            <line x1="15" y1="112" x2="135" y2="112" stroke="#fffbeb" stroke-width="5"/>
+            <text x="75" y="164" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Buffer Manager</text>
             <text x="75" y="180" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">LRU Eviction</text>
           </g>
-          <path d="M192,110 C235,110 255,110 288,110" stroke="#e8561f" stroke-width="2.5" fill="none"/>
-          <polygon points="284,104 294,110 284,116" fill="#e8561f"/>
-          <text x="430" y="24" fill="#e8561f" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">B+-Tree Index</text>
-          <rect x="400" y="38" width="60" height="28" rx="5" fill="#fff" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="430" y="57" fill="#e8561f" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Root</text>
-          <rect x="320" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="350" y="113" fill="#e8561f" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
-          <rect x="480" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="510" y="113" fill="#e8561f" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
-          <line x1="430" y1="66" x2="350" y2="94" stroke="#e8561f" stroke-width="1.5"/>
-          <line x1="430" y1="66" x2="510" y2="94" stroke="#e8561f" stroke-width="1.5"/>
-          <rect x="295" y="152" width="48" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <rect x="350" y="152" width="48" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <rect x="453" y="152" width="48" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <rect x="508" y="152" width="48" height="22" rx="4" fill="#fff4ef" stroke="#e8561f" stroke-width="1"/>
-          <line x1="350" y1="122" x2="319" y2="152" stroke="#e8561f" stroke-width="1" opacity=".6"/>
-          <line x1="350" y1="122" x2="374" y2="152" stroke="#e8561f" stroke-width="1" opacity=".6"/>
-          <line x1="510" y1="122" x2="477" y2="152" stroke="#e8561f" stroke-width="1" opacity=".6"/>
-          <line x1="510" y1="122" x2="532" y2="152" stroke="#e8561f" stroke-width="1" opacity=".6"/>
-          <path d="M563,110 C606,110 626,110 660,110" stroke="#e8561f" stroke-width="2.5" fill="none"/>
-          <polygon points="656,104 666,110 656,116" fill="#e8561f"/>
-          <text x="760" y="24" fill="#e8561f" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Query Executor</text>
-          <rect x="682" y="40" width="156" height="76" rx="8" fill="#fff" stroke="#e8561f" stroke-width="1.5"/>
+          <path d="M192,110 C235,110 255,110 288,110" stroke="#d97706" stroke-width="2.5" fill="none"/>
+          <polygon points="284,104 294,110 284,116" fill="#d97706"/>
+          <text x="430" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">B+-Tree Index</text>
+          <rect x="400" y="38" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+          <text x="430" y="57" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Root</text>
+          <rect x="320" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+          <text x="350" y="113" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
+          <rect x="480" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+          <text x="510" y="113" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
+          <line x1="430" y1="66" x2="350" y2="94" stroke="#d97706" stroke-width="1.5"/>
+          <line x1="430" y1="66" x2="510" y2="94" stroke="#d97706" stroke-width="1.5"/>
+          <rect x="295" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <rect x="350" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <rect x="453" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <rect x="508" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+          <line x1="350" y1="122" x2="319" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
+          <line x1="350" y1="122" x2="374" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
+          <line x1="510" y1="122" x2="477" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
+          <line x1="510" y1="122" x2="532" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
+          <path d="M563,110 C606,110 626,110 660,110" stroke="#d97706" stroke-width="2.5" fill="none"/>
+          <polygon points="656,104 666,110 656,116" fill="#d97706"/>
+          <text x="760" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Query Executor</text>
+          <rect x="682" y="40" width="156" height="76" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
           <text x="760" y="78" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Range Scan</text>
-          <text x="760" y="96" fill="#e8561f" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">titles A → Z</text>
-          <rect x="660" y="192" width="200" height="46" rx="8" fill="#fff4ef" stroke="#e8561f" stroke-width="1.5"/>
-          <text x="760" y="214" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Validated against</text>
-          <text x="760" y="230" fill="#c4451a" font-size="11" font-family="Inter" text-anchor="middle">PostgreSQL</text>
-          <line x1="760" y1="116" x2="760" y2="192" stroke="#e8561f" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="760" y="96" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">titles A → Z</text>
+          <rect x="660" y="192" width="200" height="46" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+          <text x="760" y="214" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Validated against</text>
+          <text x="760" y="230" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">PostgreSQL</text>
+          <line x1="760" y1="116" x2="760" y2="192" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5,3"/>
         </svg>
       </div>
       <h3>IMDB Data Management &amp; Query System</h3>
@@ -600,7 +615,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- PUBLICATION -->
 <section id="publication" class="section" style="background:var(--bg-2)">
 <div class="container" data-animate>
-  <h2>Publi<span>cation</span></h2>
+  <h2>Publication</h2>
   <div class="card" style="text-align:center;max-width:760px;margin:0 auto">
     <h3>Weed Plant Detection in Agricultural Field Using Deep Learning Integrated with IoT</h3>
     <p><strong>2024 5th International Conference on Communication, Computing and Internet of Things (IC3IoT)</strong></p>
@@ -616,7 +631,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;col
 <!-- CONTACT -->
 <section id="contact" class="section" style="background:var(--bg-2)">
 <div class="container" data-animate>
-  <h2>Get In <span>Touch</span></h2>
+  <h2>Get In Touch</h2>
   <p class="meta" style="max-width:680px;margin:0 auto 1.6rem;font-size:1rem">Open to full-time Software Engineering roles. Let's build something great together.</p>
   <div class="socials">
     <a href="mailto:varshini.venkat1@gmail.com">📧 Email</a>
